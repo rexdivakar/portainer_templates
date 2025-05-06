@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Details - Portainer Templates</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3B82F6;
+            --primary-hover: #2563EB;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+        }
+        
+        body {
+            background: var(--bg-color);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        .template-header {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .code-block {
+            background: #1a1a1a;
+            color: #fff;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+
+        .nav-link {
+            color: var(--primary-color);
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-hover);
+        }
+
+        .copy-button {
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .copy-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .stats-badge {
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 9999px;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.875rem;
+            color: #4B5563;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <nav class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="text-xl font-semibold text-gray-800">Portainer Templates</a>
+                <div class="space-x-4">
+                    <a href="/" class="nav-link">All Templates</a>
+                    <a href="https://github.com/rexdivakar/portainer_templates" target="_blank" class="nav-link">
+                        <i class="fab fa-github mr-1"></i>GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8">
+        <div id="templateContent" class="max-w-4xl mx-auto">
+            <!-- Template content will be dynamically inserted here -->
+        </div>
+    </div>
+
+    <script>
+        async function loadTemplateDetails() {
+            try {
+                // Get template name from URL query parameter
+                const urlParams = new URLSearchParams(window.location.search);
+                const templateName = urlParams.get('name');
+                
+                if (!templateName) {
+                    throw new Error('No template name provided');
+                }
+                
+                // Load templates.json
+                const response = await fetch('templates.json');
+                const data = await response.json();
+                
+                // Find the template
+                const template = data.templates.find(t => 
+                    (t.name || t.title).toLowerCase() === templateName.toLowerCase()
+                );
+
+                if (!template) {
+                    throw new Error(`Template "${templateName}" not found`);
+                }
+
+                // Render template details
+                const content = document.getElementById('templateContent');
+                content.innerHTML = `
+                    <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+                        <div class="template-header p-8">
+                            <div class="flex items-center mb-6">
+                                <div class="w-24 h-24 flex-shrink-0 mr-6">
+                                    <img src="${template.logo || 'https://via.placeholder.com/96?text=No+Logo'}" 
+                                         alt="${template.title || 'App'} logo"
+                                         class="w-full h-full object-contain rounded-xl bg-white p-2"
+                                         onerror="this.src='https://via.placeholder.com/96?text=No+Logo'">
+                                </div>
+                                <div class="flex-1">
+                                    <h1 class="text-4xl font-bold text-gray-800 mb-2">${template.title || 'Untitled'}</h1>
+                                    ${template.categories && template.categories.length > 0 ? `
+                                        <span class="stats-badge">
+                                            ${template.categories[0]}
+                                        </span>
+                                    ` : ''}
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-4 mb-6">
+                                ${template.platform ? `
+                                    <span class="stats-badge">
+                                        <i class="fab fa-${template.platform === 'linux' ? 'linux' : 'docker'} mr-1"></i>
+                                        ${template.platform}
+                                    </span>
+                                ` : ''}
+                                ${template.type ? `
+                                    <span class="stats-badge">
+                                        <i class="fas fa-cube mr-1"></i>
+                                        Type ${template.type}
+                                    </span>
+                                ` : ''}
+                            </div>
+                            <p class="text-gray-600 text-lg">${template.description || 'No description available'}</p>
+                        </div>
+
+                        <div class="p-8">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Container Information</h2>
+                                    <div class="space-y-4">
+                                        ${template.image ? `
+                                            <div>
+                                                <h3 class="text-sm font-medium text-gray-500 mb-1">Image</h3>
+                                                <p class="text-gray-800">${template.image}</p>
+                                            </div>
+                                        ` : ''}
+                                        ${template.ports && template.ports.length > 0 ? `
+                                            <div>
+                                                <h3 class="text-sm font-medium text-gray-500 mb-1">Ports</h3>
+                                                <div class="space-y-1">
+                                                    ${template.ports.map(port => `
+                                                        <p class="text-gray-800">${port}</p>
+                                                    `).join('')}
+                                                </div>
+                                            </div>
+                                        ` : ''}
+                                        ${template.volumes && template.volumes.length > 0 ? `
+                                            <div>
+                                                <h3 class="text-sm font-medium text-gray-500 mb-1">Volumes</h3>
+                                                <div class="space-y-1">
+                                                    ${template.volumes.map(volume => `
+                                                        <p class="text-gray-800">${volume.container} : ${volume.bind}</p>
+                                                    `).join('')}
+                                                </div>
+                                            </div>
+                                        ` : ''}
+                                        ${template.restart_policy ? `
+                                            <div>
+                                                <h3 class="text-sm font-medium text-gray-500 mb-1">Restart Policy</h3>
+                                                <p class="text-gray-800">${template.restart_policy}</p>
+                                            </div>
+                                        ` : ''}
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Environment Variables</h2>
+                                    ${template.env && template.env.length > 0 ? `
+                                        <div class="space-y-4">
+                                            ${template.env.map(env => `
+                                                <div>
+                                                    <h3 class="text-sm font-medium text-gray-500 mb-1">${env.label || env.name}</h3>
+                                                    <p class="text-gray-800">${env.default ? `Default: ${env.default}` : 'Required'}</p>
+                                                    ${env.description ? `
+                                                        <p class="text-sm text-gray-500 mt-1">${env.description}</p>
+                                                    ` : ''}
+                                                </div>
+                                            `).join('')}
+                                        </div>
+                                    ` : '<p class="text-gray-500">No environment variables required</p>'}
+                                </div>
+                            </div>
+
+                            <div class="mt-8">
+                                <h2 class="text-2xl font-semibold text-gray-800 mb-4">Installation</h2>
+                                
+                                <div class="space-y-6">
+                                    <div>
+                                        <h3 class="text-lg font-medium text-gray-800 mb-2">Via Portainer</h3>
+                                        <ol class="list-decimal list-inside space-y-2 text-gray-600">
+                                            <li>Ensure both Docker and Portainer are installed, and up-to-date</li>
+                                            <li>Log into your Portainer web UI</li>
+                                            <li>Under Settings → App Templates, paste the below URL</li>
+                                            <li>Head to Home → App Templates, and the list of apps will show up</li>
+                                            <li>Select the app you wish to deploy, fill in any config options, and hit Deploy</li>
+                                        </ol>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-lg font-medium text-gray-800 mb-2">Via Docker Run</h3>
+                                        <div class="relative">
+                                            <pre class="code-block">docker run -d \
+  ${template.ports ? template.ports.map(port => `-p ${port} \\`).join('\n  ') : ''}
+  ${template.env ? template.env.map(env => `-e ${env.name}=${env.default || ''} \\`).join('\n  ') : ''}
+  ${template.volumes ? template.volumes.map(vol => `-v ${vol.bind}:${vol.container} \\`).join('\n  ') : ''}
+  --restart=${template.restart_policy || 'unless-stopped'} \\
+  ${template.image || 'image:latest'}</pre>
+                                            <button onclick="copyToClipboard(this.previousElementSibling.textContent)" 
+                                                    class="copy-button absolute top-2 right-2 px-3 py-1 rounded text-sm text-white">
+                                                <i class="fas fa-copy mr-1"></i>Copy
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 class="text-lg font-medium text-gray-800 mb-2">Via Docker Compose</h3>
+                                        <div class="relative">
+                                            <pre class="code-block">version: '3.8'
+services:
+  ${template.name || 'app'}:
+    image: ${template.image || 'image:latest'}
+    ${template.ports ? `ports:\n      ${template.ports.map(port => `- ${port}`).join('\n      ')}` : ''}
+    ${template.env ? `environment:\n      ${template.env.map(env => `${env.name}: ''`).join('\n      ')}` : ''}
+    ${template.volumes ? `volumes:\n      ${template.volumes.map(vol => `- ${vol.bind}:${vol.container}`).join('\n      ')}` : ''}
+    restart: ${template.restart_policy || 'unless-stopped'}</pre>
+                                            <button onclick="copyToClipboard(this.previousElementSibling.textContent)" 
+                                                    class="copy-button absolute top-2 right-2 px-3 py-1 rounded text-sm text-white">
+                                                <i class="fas fa-copy mr-1"></i>Copy
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            } catch (error) {
+                console.error('Error loading template:', error);
+                document.getElementById('templateContent').innerHTML = `
+                    <div class="text-center py-12">
+                        <i class="fas fa-exclamation-circle text-6xl text-red-500 mb-4"></i>
+                        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Error Loading Template</h2>
+                        <p class="text-gray-600">${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Show success message
+                const button = event.target.closest('button');
+                const originalText = button.innerHTML;
+                button.innerHTML = '<i class="fas fa-check mr-1"></i>Copied!';
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                }, 2000);
+            });
+        }
+
+        // Load template details when page loads
+        loadTemplateDetails();
+    </script>
+</body>
+</html> 
