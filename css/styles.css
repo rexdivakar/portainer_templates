@@ -445,10 +445,10 @@ input, select { font-family: inherit; }
 }
 
 .card-logo {
-  width: 48px;
-  height: 48px;
+  width: 56px;
+  height: 56px;
   background: var(--gray-100);
-  border-radius: var(--radius-sm);
+  border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -457,13 +457,13 @@ input, select { font-family: inherit; }
 }
 
 .card-logo img {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   object-fit: contain;
 }
 
 .card-logo-placeholder {
-  font-size: 24px;
+  font-size: 28px;
   opacity: 0.5;
 }
 
@@ -574,11 +574,11 @@ input, select { font-family: inherit; }
 }
 
 /* Compact view */
-.template-grid[data-view="compact"] .template-card { padding: 18px; }
+.template-grid[data-view="compact"] .template-card { padding: 16px; }
 .template-grid[data-view="compact"] .card-logo { width: 48px; height: 48px; }
-.template-grid[data-view="compact"] .card-logo img { width: 30px; height: 30px; }
+.template-grid[data-view="compact"] .card-logo img { width: 32px; height: 32px; }
 .template-grid[data-view="compact"] .card-title { font-size: 14px; }
-.template-grid[data-view="compact"] .card-desc { font-size: 13px; }
+.template-grid[data-view="compact"] .card-desc { font-size: 12px; }
 
 /* ============ STATES ============ */
 .state-container {

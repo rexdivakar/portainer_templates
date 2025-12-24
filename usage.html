@@ -10,6 +10,243 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .guide-hero {
+            background: linear-gradient(135deg, var(--blue-600) 0%, var(--blue-700) 100%);
+            padding: 48px 32px;
+            text-align: center;
+            color: white;
+        }
+        .guide-hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        .guide-hero p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .guide-content {
+            max-width: 800px;
+            margin: -40px auto 0;
+            padding: 0 24px 48px;
+            position: relative;
+        }
+        .guide-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+        }
+        .guide-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .guide-card-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--blue-50);
+            border-radius: var(--radius-sm);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+        .guide-card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+        .url-copy-box {
+            display: flex;
+            align-items: center;
+            background: var(--gray-900);
+            border-radius: var(--radius-md);
+            padding: 4px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .url-copy-box:hover {
+            box-shadow: 0 0 0 3px var(--blue-100);
+        }
+        .url-copy-box .url-text {
+            flex: 1;
+            padding: 14px 18px;
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--blue-200);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .url-copy-box .copy-badge {
+            background: var(--blue-600);
+            color: white;
+            padding: 12px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+        }
+        .steps-list {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+        .steps-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 15px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        .steps-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .steps-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            width: 28px;
+            height: 28px;
+            background: var(--blue-600);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .steps-list strong {
+            color: var(--gray-900);
+            font-weight: 600;
+        }
+        .steps-list a {
+            color: var(--blue-600);
+            text-decoration: underline;
+        }
+        .tip-box {
+            display: flex;
+            gap: 14px;
+            padding: 16px 18px;
+            background: var(--blue-50);
+            border: 1px solid var(--blue-200);
+            border-radius: var(--radius-sm);
+            margin-top: 20px;
+        }
+        .tip-box .tip-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .tip-box .tip-content {
+            font-size: 14px;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+        .tip-box .tip-content strong {
+            color: var(--blue-700);
+        }
+        .warning-box {
+            background: var(--amber-50);
+            border-color: var(--amber-500);
+        }
+        .warning-box .tip-content strong {
+            color: var(--amber-700);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 8px;
+        }
+        .feature-item {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-sm);
+            padding: 18px;
+            text-align: center;
+        }
+        .feature-item .feature-icon {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        .feature-item .feature-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-900);
+            margin-bottom: 4px;
+        }
+        .feature-item .feature-desc {
+            font-size: 13px;
+            color: var(--gray-500);
+        }
+        .cta-box {
+            text-align: center;
+            padding: 32px;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--blue-50) 100%);
+            border-radius: var(--radius-lg);
+        }
+        .cta-box h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 8px;
+        }
+        .cta-box p {
+            font-size: 14px;
+            color: var(--gray-500);
+            margin-bottom: 20px;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            transition: all 0.15s ease;
+        }
+        .cta-btn-primary {
+            background: var(--blue-600);
+            color: white;
+        }
+        .cta-btn-primary:hover {
+            background: var(--blue-700);
+        }
+        .cta-btn-secondary {
+            background: var(--white);
+            color: var(--gray-700);
+            border: 1px solid var(--gray-300);
+        }
+        .cta-btn-secondary:hover {
+            background: var(--gray-50);
+        }
+        @media (max-width: 640px) {
+            .guide-hero { padding: 36px 20px; }
+            .guide-hero h1 { font-size: 28px; }
+            .guide-content { padding: 0 16px 32px; margin-top: -32px; }
+            .guide-card { padding: 20px; }
+            .url-copy-box { flex-direction: column; }
+            .url-copy-box .url-text { text-align: center; font-size: 11px; padding: 12px; }
+            .url-copy-box .copy-badge { width: 100%; text-align: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -22,69 +259,101 @@
                 <a href="index.html" class="nav-link">Browse</a>
                 <a href="usage.html" class="nav-link">Install Guide</a>
                 <a href="https://github.com/rexdivakar/portainer_templates" class="nav-link" target="_blank">GitHub</a>
-                <a href="usage.html" class="nav-link primary">Get Started</a>
+                <a href="index.html" class="nav-link primary">Browse Templates</a>
             </nav>
         </div>
     </header>
 
-    <div class="page-header">
-        <h1 class="page-title">Install Guide</h1>
-        <p class="page-desc">Add these templates to your Portainer instance in minutes</p>
-    </div>
+    <section class="guide-hero">
+        <h1>🚀 Get Started in 2 Minutes</h1>
+        <p>Add hundreds of Docker templates to your Portainer instance</p>
+    </section>
 
-    <div class="page-content">
-        <div class="content-card">
-            <h2>📋 Template URL</h2>
-            <p style="color: var(--gray-600); margin-bottom: 16px;">Copy this URL and add it to your Portainer settings:</p>
-            <div class="setup-url" style="max-width: 100%;">
-                <input type="text" class="url-input" id="template-url" value="https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json" readonly style="flex: 1;">
-                <button class="btn btn-primary" onclick="copyUrl()">Copy URL</button>
+    <div class="guide-content">
+        <div class="guide-card">
+            <div class="guide-card-header">
+                <div class="guide-card-icon">📋</div>
+                <div class="guide-card-title">Step 1: Copy the Template URL</div>
+            </div>
+            <div class="url-copy-box" onclick="copyUrl()" id="url-box">
+                <span class="url-text">https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json</span>
+                <span class="copy-badge" id="copy-btn">Click to Copy</span>
             </div>
         </div>
 
-        <div class="content-card">
-            <h2>🚀 Installation Steps</h2>
-            <ol>
-                <li>Open your <a href="https://www.portainer.io/" target="_blank">Portainer</a> instance</li>
-                <li>Navigate to <strong>Settings</strong> in the left sidebar</li>
-                <li>Scroll down to <strong>App Templates</strong> section</li>
-                <li>Paste the template URL in the <strong>URL</strong> field</li>
+        <div class="guide-card">
+            <div class="guide-card-header">
+                <div class="guide-card-icon">⚙️</div>
+                <div class="guide-card-title">Step 2: Add to Portainer</div>
+            </div>
+            <ol class="steps-list">
+                <li>Open your <a href="https://www.portainer.io/" target="_blank">Portainer</a> dashboard</li>
+                <li>Go to <strong>Settings</strong> in the left sidebar</li>
+                <li>Find the <strong>App Templates</strong> section</li>
+                <li>Paste the URL in the <strong>URL</strong> field</li>
                 <li>Click <strong>Save settings</strong></li>
-                <li>Go to <strong>App Templates</strong> to see all available templates</li>
+                <li>Navigate to <strong>App Templates</strong> to browse all templates</li>
             </ol>
-            
-            <div class="note-box info">
-                <span class="note-icon">💡</span>
-                <div class="note-content">
-                    <strong>Tip:</strong> Templates are cached by Portainer. If you don't see new templates, try clearing your browser cache or restarting Portainer.
+            <div class="tip-box">
+                <span class="tip-icon">💡</span>
+                <div class="tip-content">
+                    <strong>Pro tip:</strong> Templates are cached by Portainer. If you don't see updates, clear your browser cache or restart Portainer.
                 </div>
             </div>
         </div>
 
-        <div class="content-card">
-            <h2>⚠️ Important Notes</h2>
-            <div class="note-box warning">
-                <span class="note-icon">🔒</span>
-                <div class="note-content">
-                    <strong>Security:</strong> Some templates run in privileged mode or expose many ports. Always review the template details before deploying to production.
+        <div class="guide-card">
+            <div class="guide-card-header">
+                <div class="guide-card-icon">⚠️</div>
+                <div class="guide-card-title">Important Notes</div>
+            </div>
+            <div class="tip-box warning-box">
+                <span class="tip-icon">🔒</span>
+                <div class="tip-content">
+                    <strong>Security:</strong> Some templates run in privileged mode or expose multiple ports. Always review template details before deploying to production environments.
                 </div>
             </div>
-            
-            <div class="note-box info" style="margin-top: 12px;">
-                <span class="note-icon">📦</span>
-                <div class="note-content">
-                    <strong>Volumes:</strong> Make sure to configure volume paths according to your system. Default paths may not exist on your host.
+            <div class="tip-box" style="margin-top: 12px;">
+                <span class="tip-icon">📁</span>
+                <div class="tip-content">
+                    <strong>Volumes:</strong> Configure volume paths according to your system. Default paths may not exist on your host machine.
                 </div>
             </div>
         </div>
 
-        <div class="content-card">
-            <h2>🤝 Contributing</h2>
-            <p style="color: var(--gray-600); line-height: 1.7;">
-                Want to add a template or fix an issue? Contributions are welcome! 
-                Check out our <a href="https://github.com/rexdivakar/portainer_templates" target="_blank">GitHub repository</a> 
-                to submit a pull request or report issues.
-            </p>
+        <div class="guide-card">
+            <div class="guide-card-header">
+                <div class="guide-card-icon">✨</div>
+                <div class="guide-card-title">What You Get</div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📦</div>
+                    <div class="feature-title">475+ Templates</div>
+                    <div class="feature-desc">Ready-to-deploy containers</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🏷️</div>
+                    <div class="feature-title">140+ Categories</div>
+                    <div class="feature-desc">Organized by use case</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <div class="feature-title">Daily Updates</div>
+                    <div class="feature-desc">Fresh metadata & stats</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="guide-card" style="padding: 0; overflow: hidden;">
+            <div class="cta-box">
+                <h3>Ready to explore?</h3>
+                <p>Browse all available templates or contribute to the project</p>
+                <div class="cta-buttons">
+                    <a href="index.html" class="cta-btn cta-btn-primary">Browse Templates →</a>
+                    <a href="https://github.com/rexdivakar/portainer_templates" target="_blank" class="cta-btn cta-btn-secondary">View on GitHub</a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -101,11 +370,20 @@
 
     <script>
         function copyUrl() {
-            const url = document.getElementById('template-url').value;
+            const url = 'https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json';
+            const btn = document.getElementById('copy-btn');
+            const box = document.getElementById('url-box');
+            
             navigator.clipboard.writeText(url).then(() => {
-                const btn = event.target;
                 btn.textContent = '✓ Copied!';
-                setTimeout(() => btn.textContent = 'Copy URL', 2000);
+                btn.style.background = 'var(--green-600)';
+                box.style.boxShadow = '0 0 0 3px var(--green-100)';
+                
+                setTimeout(() => {
+                    btn.textContent = 'Click to Copy';
+                    btn.style.background = '';
+                    box.style.boxShadow = '';
+                }, 2000);
             });
         }
     </script>
