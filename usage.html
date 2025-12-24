@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="How to install Portainer Templates on your Portainer instance">
-    <meta name="theme-color" content="#2563eb">
+    <meta name="theme-color" content="#3b82f6">
     <title>Install Guide - Portainer Templates</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐳</text></svg>">
     <link rel="stylesheet" href="css/styles.css">
@@ -12,7 +12,6 @@
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <!-- Header -->
     <header class="header" role="banner">
         <div class="header-content">
             <a href="index.html" class="logo" aria-label="Portainer Templates Home">
@@ -22,68 +21,46 @@
             <nav class="nav-links" role="navigation" aria-label="Primary">
                 <a href="index.html" class="nav-link">Templates</a>
                 <a href="usage.html" class="nav-link" aria-current="page">Install Guide</a>
-                <a href="https://github.com/rexdivakar/portainer_templates" class="nav-link" target="_blank" rel="noopener">
-                    GitHub
-                </a>
-                <a href="usage.html" class="nav-link primary">Install on Portainer</a>
+                <a href="https://github.com/rexdivakar/portainer_templates" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+                <a href="usage.html" class="nav-link primary">Get Started</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero -->
     <section class="hero">
-        <div>
-            <h1>Install on Portainer</h1>
-            <p>Get access to hundreds of ready-to-deploy container templates in just a few clicks</p>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h1>Install on Portainer</h1>
+                <p>Get access to hundreds of ready-to-deploy container templates in just a few clicks. No complex setup required.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Main Content -->
     <main id="main-content" class="detail-container">
-        <!-- Template URL Box -->
-        <div class="install-url-box" style="margin-bottom: 2rem;">
-            <h3>🔗 Template URL</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+        <div class="section-card">
+            <h2 class="section-title">🔗 Template URL</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
                 Copy this URL and paste it into your Portainer settings
             </p>
-            <div class="url-display" id="template-url">https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json</div>
-            <button class="btn btn-primary" onclick="copyUrl()">
-                📋 Copy URL
-            </button>
+            <div class="template-url-row">
+                <div class="url-display" id="template-url">https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json</div>
+                <button class="btn btn-primary" onclick="copyUrl()">Copy URL</button>
+            </div>
         </div>
 
-        <!-- Installation Steps -->
-        <div class="info-card">
-            <h3>📖 Installation Steps</h3>
-            <ol style="color: var(--text-secondary); padding-left: 1.5rem; line-height: 2.5; font-size: 1.1rem;">
-                <li>
-                    <strong style="color: var(--text-primary);">Prerequisites</strong><br>
-                    <span style="font-size: 0.95rem;">Ensure Docker and Portainer are installed and running</span>
-                </li>
-                <li>
-                    <strong style="color: var(--text-primary);">Open Portainer Settings</strong><br>
-                    <span style="font-size: 0.95rem;">Log into your Portainer web UI and navigate to <code style="background: var(--bg-primary); padding: 0.2rem 0.5rem; border-radius: 4px;">Settings → App Templates</code></span>
-                </li>
-                <li>
-                    <strong style="color: var(--text-primary);">Add Template URL</strong><br>
-                    <span style="font-size: 0.95rem;">Paste the URL above into the <code style="background: var(--bg-primary); padding: 0.2rem 0.5rem; border-radius: 4px;">URL</code> field</span>
-                </li>
-                <li>
-                    <strong style="color: var(--text-primary);">Save Settings</strong><br>
-                    <span style="font-size: 0.95rem;">Click <code style="background: var(--bg-primary); padding: 0.2rem 0.5rem; border-radius: 4px;">Save settings</code> to apply changes</span>
-                </li>
-                <li>
-                    <strong style="color: var(--text-primary);">Browse Templates</strong><br>
-                    <span style="font-size: 0.95rem;">Go to <code style="background: var(--bg-primary); padding: 0.2rem 0.5rem; border-radius: 4px;">App Templates</code> in the sidebar to see all available templates</span>
-                </li>
-                <li>
-                    <strong style="color: var(--text-primary);">Deploy!</strong><br>
-                    <span style="font-size: 0.95rem;">Select any template, configure options, and click <code style="background: var(--bg-primary); padding: 0.2rem 0.5rem; border-radius: 4px;">Deploy the container</code></span>
-                </li>
+        <div class="section-card">
+            <h2 class="section-title">📖 Installation Steps</h2>
+            <ol class="install-steps">
+                <li>Ensure both <a href="https://docs.docker.com/get-docker/" target="_blank">Docker</a> and <a href="https://docs.portainer.io/start/install" target="_blank">Portainer</a> are installed and up-to-date</li>
+                <li>Log into your Portainer web UI</li>
+                <li>Navigate to <strong>Settings → App Templates</strong></li>
+                <li>Paste the URL above into the <strong>URL</strong> field</li>
+                <li>Click <strong>Save settings</strong> to apply changes</li>
+                <li>Go to <strong>App Templates</strong> in the sidebar to see all available templates</li>
+                <li>Select any template, configure options, and click <strong>Deploy the container</strong></li>
             </ol>
         </div>
 
-        <!-- Notes -->
         <div class="note-box info">
             <span class="note-icon">💡</span>
             <div class="note-content">
@@ -100,10 +77,9 @@
             </div>
         </div>
 
-        <!-- Self-Hosting -->
-        <div class="info-card" style="margin-top: 2rem;">
-            <h3>🏠 Self-Hosting This UI</h3>
-            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+        <div class="section-card">
+            <h2 class="section-title">🏠 Self-Hosting This UI</h2>
+            <p style="color: var(--text-secondary); margin-bottom: var(--space-lg);">
                 Want to host this template browser yourself? It's just static files!
             </p>
             <div class="code-block">
@@ -120,19 +96,17 @@ python -m http.server 8080
 npx serve .</pre>
             </div>
             <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                Works with GitHub Pages, Nginx, Apache, Caddy, or any static hosting service.
+                Works with GitHub Pages, Netlify, Vercel, or any static hosting service.
             </p>
         </div>
 
-        <!-- Back to Templates -->
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="index.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 0.75rem 2rem;">
+        <div style="text-align: center; margin-top: var(--space-xl);">
+            <a href="index.html" class="btn btn-primary" style="font-size: 0.95rem; padding: 0.75rem 1.5rem;">
                 ← Browse All Templates
             </a>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer class="footer" role="contentinfo">
         <div class="footer-content">
             <div class="footer-links">
@@ -140,7 +114,7 @@ npx serve .</pre>
                 <a href="https://github.com/rexdivakar/portainer_templates/issues" target="_blank" rel="noopener">Report Issue</a>
                 <a href="https://docs.portainer.io/" target="_blank" rel="noopener">Portainer Docs</a>
             </div>
-            <p class="footer-copy">&copy; 2025 Portainer Templates. MIT License.</p>
+            <p class="footer-copy">© 2025 Portainer Templates. MIT License.</p>
         </div>
     </footer>
 
@@ -150,12 +124,8 @@ npx serve .</pre>
             navigator.clipboard.writeText(url).then(() => {
                 const btn = event.target;
                 const original = btn.innerHTML;
-                btn.innerHTML = '✅ Copied!';
-                btn.classList.add('copied');
-                setTimeout(() => {
-                    btn.innerHTML = original;
-                    btn.classList.remove('copied');
-                }, 2000);
+                btn.innerHTML = '✓ Copied!';
+                setTimeout(() => { btn.innerHTML = original; }, 2000);
             });
         }
     </script>

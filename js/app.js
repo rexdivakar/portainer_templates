@@ -1,24 +1,21 @@
 /**
  * Portainer Templates - Main Application
- * Vanilla JS implementation with fuzzy search, caching, and URL state
+ * Modern vanilla JS with caching and URL state
  */
 
 (function() {
     'use strict';
 
-    // Configuration
     const CONFIG = {
         TEMPLATES_URL: 'templates.json',
         CACHE_KEY: 'portainer_templates_cache',
-        CACHE_TTL: 3600000, // 1 hour in milliseconds
-        DEBOUNCE_DELAY: 150,
-        FUZZY_THRESHOLD: 0.3
+        CACHE_TTL: 3600000,
+        DEBOUNCE_DELAY: 150
     };
 
     const TYPE_LABELS = { 1: 'Container', 2: 'Stack', 3: 'Compose' };
     const VIEW_MODES = ['grid', 'list', 'compact'];
 
-    // State
     let state = {
         templates: [],
         filteredTemplates: [],
@@ -29,16 +26,13 @@
         viewMode: 'grid'
     };
 
-    // DOM Elements
     const elements = {};
 
-    // Initialize on DOM ready
     document.addEventListener('DOMContentLoaded', init);
 
     async function init() {
         cacheElements();
         setupEventListeners();
-        setupScrollObserver();
         await loadTemplates();
         restoreStateFromURL();
     }
@@ -62,15 +56,11 @@
     }
 
     function setupEventListeners() {
-        // Search with debounce
         elements.searchInput?.addEventListener('input', debounce(handleFilterChange, CONFIG.DEBOUNCE_DELAY));
-        
-        // Filters
         elements.categoryFilter?.addEventListener('change', handleFilterChange);
         elements.typeFilter?.addEventListener('change', handleFilterChange);
         elements.sortFilter?.addEventListener('change', handleFilterChange);
 
-        // Keyboard shortcuts
         document.addEventListener('keydown', (e) => {
             if (e.key === '/' && document.activeElement !== elements.searchInput) {
                 e.preventDefault();
@@ -81,71 +71,31 @@
             }
         });
 
-        // View toggle buttons
         elements.viewButtons?.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const mode = btn.dataset.view || 'grid';
-                setViewMode(mode);
-            });
+            btn.addEventListener('click', () => setViewMode(btn.dataset.view || 'grid'));
         });
 
-        // Handle browser back/forward
         window.addEventListener('popstate', restoreStateFromURL);
-    }
-
-    function setupScrollObserver() {
-        const header = document.querySelector('.header');
-        if (!header) return;
-
-        let lastScroll = 0;
-        const scrollThreshold = 10;
-
-        window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            if (currentScroll > scrollThreshold) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-
-            lastScroll = currentScroll;
-        }, { passive: true });
     }
 
     function setViewMode(mode, options = {}) {
         const normalized = VIEW_MODES.includes(mode) ? mode : 'grid';
-        const force = options.force || false;
-
-        if (!force && state.viewMode === normalized) {
-            return;
-        }
+        if (!options.force && state.viewMode === normalized) return;
 
         state.viewMode = normalized;
-
-        if (elements.templateGrid) {
-            elements.templateGrid.dataset.view = normalized;
-        }
-
-        elements.viewButtons?.forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.view === normalized);
-        });
-
-        if (!options.skipURL) {
-            updateURLState();
-        }
+        if (elements.templateGrid) elements.templateGrid.dataset.view = normalized;
+        elements.viewButtons?.forEach(btn => btn.classList.toggle('active', btn.dataset.view === normalized));
+        if (!options.skipURL) updateURLState();
     }
 
     async function loadTemplates() {
         showLoading(true);
         
         try {
-            // Try cache first
             const cached = getFromCache();
             if (cached) {
                 processTemplates(cached);
                 showLoading(false);
-                // Refresh in background
                 fetchTemplates().then(data => {
                     if (data) {
                         saveToCache(data);
@@ -156,7 +106,6 @@
                 return;
             }
 
-            // Fetch fresh data
             const data = await fetchTemplates();
             if (data) {
                 saveToCache(data);
@@ -171,9 +120,7 @@
 
     async function fetchTemplates() {
         const response = await fetch(CONFIG.TEMPLATES_URL);
-        if (!response.ok) {
-            throw new Error(`Failed to load templates (HTTP ${response.status})`);
-        }
+        if (!response.ok) throw new Error(`Failed to load templates (HTTP ${response.status})`);
         return await response.json();
     }
 
@@ -186,71 +133,43 @@
         state.categories = new Set();
         state.validationWarnings = [];
 
-        // Extract categories, prepare metadata, and validate
         state.templates.forEach((template, index) => {
             prepareTemplate(template);
-
             if (template.categories) {
                 template.categories.forEach(cat => state.categories.add(cat));
             }
-            
             const warnings = validateTemplate(template, index);
-            if (warnings.length > 0) {
-                state.validationWarnings.push(...warnings);
-            }
+            if (warnings.length > 0) state.validationWarnings.push(...warnings);
         });
 
-        // Update stats
-        if (elements.templateCount) {
-            elements.templateCount.textContent = state.templates.length;
-        }
-        if (elements.categoryCount) {
-            elements.categoryCount.textContent = state.categories.size;
-        }
+        if (elements.templateCount) elements.templateCount.textContent = state.templates.length;
+        if (elements.categoryCount) elements.categoryCount.textContent = state.categories.size;
 
-        // Populate category filter
         populateCategoryFilter();
-
-        // Show validation warnings if any
-        if (state.validationWarnings.length > 0) {
-            showValidationWarnings();
-        }
-
-        // Initial render
+        if (state.validationWarnings.length > 0) showValidationWarnings();
         handleFilterChange();
     }
 
     function validateTemplate(template, index) {
         const warnings = [];
         const id = template.title || `Template #${index}`;
-
-        if (!template.title) {
-            warnings.push(`${id}: Missing title`);
-        }
-        if (!template.image && template.type === 1) {
-            warnings.push(`${id}: Missing image for container template`);
-        }
-        if (template.privileged) {
-            warnings.push(`${id}: Uses privileged mode (security risk)`);
-        }
-
+        if (!template.title) warnings.push(`${id}: Missing title`);
+        if (!template.image && template.type === 1) warnings.push(`${id}: Missing image`);
+        if (template.privileged) warnings.push(`${id}: Uses privileged mode`);
         return warnings;
     }
 
     function showValidationWarnings() {
         if (elements.validationBanner && elements.validationMessage) {
             elements.validationBanner.classList.remove('hidden');
-            elements.validationMessage.textContent = 
-                `${state.validationWarnings.length} template(s) have validation warnings`;
+            elements.validationMessage.textContent = `${state.validationWarnings.length} template(s) have validation warnings`;
         }
     }
 
     function populateCategoryFilter() {
         if (!elements.categoryFilter) return;
-
         const sortedCategories = Array.from(state.categories).sort();
         elements.categoryFilter.innerHTML = '<option value="">All Categories</option>';
-        
         sortedCategories.forEach(category => {
             const option = document.createElement('option');
             option.value = category;
@@ -265,33 +184,15 @@
         const type = elements.typeFilter?.value || '';
         const sort = elements.sortFilter?.value || 'name-asc';
 
-        // Filter templates
         state.filteredTemplates = state.templates.filter(template => {
-            // Category filter
-            if (category && (!template.categories || !template.categories.includes(category))) {
-                return false;
-            }
-
-            // Type filter
-            if (type && template.type !== parseInt(type)) {
-                return false;
-            }
-
-            // Search filter (fuzzy)
-            if (searchTerm) {
-                return fuzzyMatch(template, searchTerm);
-            }
-
+            if (category && (!template.categories || !template.categories.includes(category))) return false;
+            if (type && template.type !== parseInt(type)) return false;
+            if (searchTerm) return fuzzyMatch(template, searchTerm);
             return true;
         });
 
-        // Sort templates
         sortTemplates(sort);
-
-        // Update URL state
         updateURLState();
-
-        // Render
         renderTemplates();
     }
 
@@ -304,12 +205,10 @@
     function sortTemplates(sortType) {
         switch (sortType) {
             case 'name-asc':
-                state.filteredTemplates.sort((a, b) => 
-                    (a.title || '').localeCompare(b.title || ''));
+                state.filteredTemplates.sort((a, b) => (a.title || '').localeCompare(b.title || ''));
                 break;
             case 'name-desc':
-                state.filteredTemplates.sort((a, b) => 
-                    (b.title || '').localeCompare(a.title || ''));
+                state.filteredTemplates.sort((a, b) => (b.title || '').localeCompare(a.title || ''));
                 break;
             case 'category':
                 state.filteredTemplates.sort((a, b) => {
@@ -323,57 +222,35 @@
 
     function renderTemplates() {
         if (!elements.templateGrid) return;
-
-        // Ensure grid is visible
         elements.templateGrid.style.display = 'grid';
 
-        // Update results count
         if (elements.resultsCount) {
-            elements.resultsCount.textContent =
-                `${state.filteredTemplates.length} of ${state.templates.length} templates`;
+            elements.resultsCount.textContent = `${state.filteredTemplates.length} of ${state.templates.length} templates`;
         }
 
-        // Show empty state if no results
         if (state.filteredTemplates.length === 0) {
             elements.templateGrid.innerHTML = '';
-            if (elements.emptyState) {
-                elements.emptyState.style.display = 'block';
-            }
+            if (elements.emptyState) elements.emptyState.style.display = 'block';
             return;
         }
 
-        if (elements.emptyState) {
-            elements.emptyState.style.display = 'none';
-        }
+        if (elements.emptyState) elements.emptyState.style.display = 'none';
 
         const fragment = document.createDocumentFragment();
         state.filteredTemplates.forEach(template => {
-            if (!template._element) {
-                prepareTemplate(template);
-            }
-            // Clone the node to avoid issues with moving elements
-            const cardElement = template._element.cloneNode(true);
-            fragment.appendChild(cardElement);
+            if (!template._element) prepareTemplate(template);
+            fragment.appendChild(template._element.cloneNode(true));
         });
         elements.templateGrid.replaceChildren(fragment);
     }
 
     function prepareTemplate(template = {}) {
         const pieces = [
-            template.title,
-            template.name,
-            template.description,
-            template.image,
-            template.platform,
+            template.title, template.name, template.description, template.image, template.platform,
             ...(template.categories || []),
             ...(template.env || []).flatMap(env => [env.name, env.label, env.description])
         ];
-
-        template._searchText = pieces
-            .filter(Boolean)
-            .join(' ')
-            .toLowerCase();
-
+        template._searchText = pieces.filter(Boolean).join(' ').toLowerCase();
         template._element = buildTemplateElement(template);
     }
 
@@ -389,11 +266,7 @@
         logoWrapper.className = 'card-logo';
 
         const showPlaceholder = () => {
-            logoWrapper.innerHTML = '';
-            const placeholder = document.createElement('span');
-            placeholder.className = 'card-logo-placeholder';
-            placeholder.textContent = '📦';
-            logoWrapper.appendChild(placeholder);
+            logoWrapper.innerHTML = '<span class="card-logo-placeholder">📦</span>';
         };
 
         if (template.logo) {
@@ -410,6 +283,7 @@
 
         const titleSection = document.createElement('div');
         titleSection.className = 'card-title-section';
+        
         const title = document.createElement('h3');
         title.className = 'card-title';
         title.textContent = template.title || 'Untitled';
@@ -417,16 +291,19 @@
 
         const badgeRow = document.createElement('div');
         badgeRow.className = 'card-badges';
+        
         if (template.categories?.length) {
             const catBadge = document.createElement('span');
             catBadge.className = 'badge badge-category';
             catBadge.textContent = template.categories[0];
             badgeRow.appendChild(catBadge);
         }
+        
         const typeBadge = document.createElement('span');
         typeBadge.className = 'badge badge-type';
         typeBadge.textContent = TYPE_LABELS[template.type] || 'Container';
         badgeRow.appendChild(typeBadge);
+        
         if (template.platform) {
             const platformBadge = document.createElement('span');
             platformBadge.className = 'badge badge-platform';
@@ -440,9 +317,10 @@
 
         const body = document.createElement('div');
         body.className = 'card-body';
+        
         const desc = document.createElement('p');
         desc.className = 'card-description';
-        desc.textContent = template.description || 'No description available yet.';
+        desc.textContent = template.description || 'No description available.';
         body.appendChild(desc);
 
         const risks = getRiskIndicators(template);
@@ -464,14 +342,15 @@
 
         const meta = document.createElement('div');
         meta.className = 'card-meta';
+        
         if (template.env?.length) {
             const envStat = document.createElement('span');
-            envStat.textContent = `📝 ${template.env.length} env vars`;
+            envStat.textContent = `📝 ${template.env.length} vars`;
             meta.appendChild(envStat);
         }
         if (template.volumes?.length) {
             const volStat = document.createElement('span');
-            volStat.textContent = `💾 ${template.volumes.length} volumes`;
+            volStat.textContent = `💾 ${template.volumes.length} vols`;
             meta.appendChild(volStat);
         }
         footer.appendChild(meta);
@@ -480,7 +359,7 @@
         link.className = 'btn btn-primary btn-sm';
         const slug = template.name || template.title || 'untitled';
         link.href = `template.html?name=${encodeURIComponent(slug)}`;
-        link.textContent = 'View Details →';
+        link.textContent = 'Details →';
         footer.appendChild(link);
 
         article.appendChild(header);
@@ -492,127 +371,76 @@
 
     function getRiskIndicators(template) {
         const risks = [];
-        if (template.privileged) {
-            risks.push({ type: 'danger', label: 'Privileged', icon: '⚠️' });
-        }
-        if (template.network === 'host') {
-            risks.push({ type: 'warning', label: 'Host Network', icon: '🌐' });
-        }
-        if (template.ports?.length > 3) {
-            risks.push({ type: 'warning', label: `${template.ports.length} Ports`, icon: '🔌' });
-        }
+        if (template.privileged) risks.push({ type: 'danger', label: 'Privileged', icon: '⚠️' });
+        if (template.network === 'host') risks.push({ type: 'warning', label: 'Host Net', icon: '🌐' });
+        if (template.ports?.length > 3) risks.push({ type: 'warning', label: `${template.ports.length} Ports`, icon: '🔌' });
         return risks;
     }
 
-    // URL State Management
     function updateURLState() {
         const params = new URLSearchParams();
-        
-        if (elements.searchInput?.value) {
-            params.set('q', elements.searchInput.value);
-        }
-        if (elements.categoryFilter?.value) {
-            params.set('category', elements.categoryFilter.value);
-        }
-        if (elements.typeFilter?.value) {
-            params.set('type', elements.typeFilter.value);
-        }
+        if (elements.searchInput?.value) params.set('q', elements.searchInput.value);
+        if (elements.categoryFilter?.value) params.set('category', elements.categoryFilter.value);
+        if (elements.typeFilter?.value) params.set('type', elements.typeFilter.value);
         if (elements.sortFilter?.value && elements.sortFilter.value !== 'name-asc') {
             params.set('sort', elements.sortFilter.value);
         }
-
-        if (state.viewMode && state.viewMode !== 'grid') {
-            params.set('view', state.viewMode);
-        }
+        if (state.viewMode && state.viewMode !== 'grid') params.set('view', state.viewMode);
 
         const newURL = params.toString() 
             ? `${window.location.pathname}?${params.toString()}`
             : window.location.pathname;
-
         window.history.replaceState({}, '', newURL);
     }
 
     function restoreStateFromURL() {
         const params = new URLSearchParams(window.location.search);
-
-        if (elements.searchInput && params.has('q')) {
-            elements.searchInput.value = params.get('q');
-        }
-        if (elements.categoryFilter && params.has('category')) {
-            elements.categoryFilter.value = params.get('category');
-        }
-        if (elements.typeFilter && params.has('type')) {
-            elements.typeFilter.value = params.get('type');
-        }
-        if (elements.sortFilter && params.has('sort')) {
-            elements.sortFilter.value = params.get('sort');
-        }
-
+        if (elements.searchInput && params.has('q')) elements.searchInput.value = params.get('q');
+        if (elements.categoryFilter && params.has('category')) elements.categoryFilter.value = params.get('category');
+        if (elements.typeFilter && params.has('type')) elements.typeFilter.value = params.get('type');
+        if (elements.sortFilter && params.has('sort')) elements.sortFilter.value = params.get('sort');
+        
         if (params.has('view')) {
             setViewMode(params.get('view'), { skipURL: true, force: true });
         } else {
             setViewMode('grid', { skipURL: true, force: true });
         }
 
-        if (state.templates.length > 0) {
-            handleFilterChange();
-        }
+        if (state.templates.length > 0) handleFilterChange();
     }
 
-    // Caching
     function getFromCache() {
         try {
             const cached = localStorage.getItem(CONFIG.CACHE_KEY);
             if (!cached) return null;
-
             const { data, timestamp } = JSON.parse(cached);
             if (Date.now() - timestamp > CONFIG.CACHE_TTL) {
                 localStorage.removeItem(CONFIG.CACHE_KEY);
                 return null;
             }
-
             return data;
-        } catch {
-            return null;
-        }
+        } catch { return null; }
     }
 
     function saveToCache(data) {
         try {
-            localStorage.setItem(CONFIG.CACHE_KEY, JSON.stringify({
-                data,
-                timestamp: Date.now()
-            }));
-        } catch {
-            // Storage full or disabled
-        }
+            localStorage.setItem(CONFIG.CACHE_KEY, JSON.stringify({ data, timestamp: Date.now() }));
+        } catch {}
     }
 
-    // UI Helpers
     function showLoading(show) {
         state.isLoading = show;
-        if (elements.loadingState) {
-            elements.loadingState.style.display = show ? 'block' : 'none';
-        }
-        if (elements.templateGrid) {
-            elements.templateGrid.style.display = show ? 'none' : 'grid';
-        }
+        if (elements.loadingState) elements.loadingState.style.display = show ? 'block' : 'none';
+        if (elements.templateGrid) elements.templateGrid.style.display = show ? 'none' : 'grid';
     }
 
     function showError(message) {
         state.error = message;
-        if (elements.errorState) {
-            elements.errorState.style.display = 'block';
-        }
-        if (elements.errorMessage) {
-            elements.errorMessage.textContent = message;
-        }
-        if (elements.loadingState) {
-            elements.loadingState.style.display = 'none';
-        }
+        if (elements.errorState) elements.errorState.style.display = 'block';
+        if (elements.errorMessage) elements.errorMessage.textContent = message;
+        if (elements.loadingState) elements.loadingState.style.display = 'none';
     }
 
-    // Utilities
     function debounce(fn, delay) {
         let timeoutId;
         return function(...args) {
@@ -621,13 +449,7 @@
         };
     }
 
-    function escapeHtml(str) {
-        const div = document.createElement('div');
-        div.textContent = str;
-        return div.innerHTML;
-    }
-
-    // Global functions for onclick handlers
+    // Global functions
     window.clearFilters = function() {
         if (elements.searchInput) elements.searchInput.value = '';
         if (elements.categoryFilter) elements.categoryFilter.value = '';
@@ -639,26 +461,14 @@
     window.copyTemplateUrl = function() {
         const urlElement = document.getElementById('homepage-template-url');
         const btnElement = document.getElementById('copy-url-btn');
-
         if (!urlElement || !btnElement) return;
 
-        const url = urlElement.textContent;
-
-        navigator.clipboard.writeText(url).then(() => {
+        navigator.clipboard.writeText(urlElement.textContent).then(() => {
             const originalText = btnElement.innerHTML;
             btnElement.innerHTML = '✅ Copied!';
-            btnElement.style.background = 'var(--color-success)';
-
-            setTimeout(() => {
-                btnElement.innerHTML = originalText;
-                btnElement.style.background = '';
-            }, 2000);
-        }).catch(err => {
-            console.error('Failed to copy:', err);
-            alert('Failed to copy URL. Please copy manually.');
-        });
+            setTimeout(() => { btnElement.innerHTML = originalText; }, 2000);
+        }).catch(() => alert('Failed to copy URL'));
     };
 
     window.loadTemplates = loadTemplates;
-
 })();
