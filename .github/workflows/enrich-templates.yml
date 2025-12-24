@@ -1,0 +1,40 @@
+name: 📊 Enrich Templates with Metadata
+
+on:
+  workflow_dispatch:  # Manual trigger
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM UTC
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+          
+      - name: Run enrichment script
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python lib/enrich.py
+        
+      - name: Commit and push if changes
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+          
+          git add templates.json
+          
+          if git diff --staged --quiet; then
+            echo "No changes to templates.json"
+          else
+            git commit -m "Enrich templates with Docker Hub/GitHub metadata [skip ci]"
+            git push
+          fi

@@ -271,6 +271,11 @@
 
         const dockerRun = genDockerRun(t);
         const dockerCompose = genDockerCompose(t);
+        
+        // Build metadata sections
+        const meta = t.metadata || {};
+        const docker = meta.docker || {};
+        const github = meta.github || {};
 
         overlay.innerHTML = `
             <div class="modal">
@@ -285,6 +290,15 @@
                     <button class="modal-close" id="modal-close-btn">✕</button>
                 </div>
                 <div class="modal-body">
+                    ${(docker.pulls || github.stars) ? `
+                    <div class="modal-stats">
+                        ${docker.pulls ? `<div class="modal-stat"><span class="stat-icon">⬇️</span><span class="stat-num">${docker.pulls_formatted || docker.pulls}</span><span class="stat-text">pulls</span></div>` : ''}
+                        ${docker.stars ? `<div class="modal-stat"><span class="stat-icon">⭐</span><span class="stat-num">${docker.stars}</span><span class="stat-text">Docker stars</span></div>` : ''}
+                        ${github.stars ? `<div class="modal-stat"><span class="stat-icon">🌟</span><span class="stat-num">${github.stars}</span><span class="stat-text">GitHub stars</span></div>` : ''}
+                        ${github.forks ? `<div class="modal-stat"><span class="stat-icon">🍴</span><span class="stat-num">${github.forks}</span><span class="stat-text">forks</span></div>` : ''}
+                    </div>
+                    ` : ''}
+
                     <div class="modal-section">
                         <div class="modal-section-title">Description</div>
                         <p class="modal-desc">${esc(t.description || 'No description available.')}</p>
@@ -307,9 +321,22 @@
                                 <div class="modal-info-value">${esc(t.image || '-')}</div>
                             </div>
                             ${t.ports?.length ? `<div class="modal-info-item"><div class="modal-info-label">Ports</div><div class="modal-info-value">${t.ports.join(', ')}</div></div>` : ''}
+                            ${t.restart_policy ? `<div class="modal-info-item"><div class="modal-info-label">Restart</div><div class="modal-info-value">${esc(t.restart_policy)}</div></div>` : ''}
+                            ${t.network ? `<div class="modal-info-item"><div class="modal-info-label">Network</div><div class="modal-info-value">${esc(t.network)}</div></div>` : ''}
                             ${t.command ? `<div class="modal-info-item"><div class="modal-info-label">Command</div><div class="modal-info-value">${esc(t.command)}</div></div>` : ''}
+                            ${github.license ? `<div class="modal-info-item"><div class="modal-info-label">License</div><div class="modal-info-value">${esc(github.license)}</div></div>` : ''}
                         </div>
                     </div>
+
+                    ${(docker.hub_url || github.url) ? `
+                    <div class="modal-section">
+                        <div class="modal-section-title">Links</div>
+                        <div class="modal-links">
+                            ${docker.hub_url ? `<a href="${docker.hub_url}" target="_blank" class="modal-link"><span>🐳</span> Docker Hub</a>` : ''}
+                            ${github.url ? `<a href="${github.url}" target="_blank" class="modal-link"><span>📂</span> GitHub Repository</a>` : ''}
+                        </div>
+                    </div>
+                    ` : ''}
 
                     ${t.env?.length ? `
                     <div class="modal-section">
