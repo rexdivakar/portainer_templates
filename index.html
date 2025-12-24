@@ -10,43 +10,43 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
-    <header class="header" role="banner">
-        <div class="header-content">
-            <a href="index.html" class="logo" aria-label="Portainer Templates Home">
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
                 <span class="logo-icon">🐳</span>
                 <span>Portainer Templates</span>
             </a>
-            <nav class="nav-links" role="navigation" aria-label="Primary">
-                <a href="index.html" class="nav-link" aria-current="page">Templates</a>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Templates</a>
                 <a href="usage.html" class="nav-link">Install Guide</a>
-                <a href="https://github.com/rexdivakar/portainer_templates" class="nav-link" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://github.com/rexdivakar/portainer_templates" class="nav-link" target="_blank">GitHub</a>
                 <a href="usage.html" class="nav-link primary">Get Started</a>
             </nav>
         </div>
     </header>
 
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero">
         <div class="hero-inner">
-            <div class="hero-content">
-                <h1 id="hero-title">Deploy Docker containers in seconds</h1>
-                <p>Browse hundreds of ready-to-use templates. Search, filter, and deploy with confidence. Built for self-hosters who value speed and security.</p>
-                <div class="hero-actions">
-                    <a class="hero-cta primary" href="usage.html">Get Started →</a>
-                    <a class="hero-cta ghost" href="https://github.com/rexdivakar/portainer_templates" target="_blank" rel="noopener">View on GitHub</a>
+            <div class="hero-text">
+                <h1 class="hero-title">Deploy Docker containers in seconds</h1>
+                <p class="hero-desc">Browse hundreds of ready-to-use templates. Search, filter, and deploy with confidence. Built for self-hosters who value speed and security.</p>
+                <div class="hero-buttons">
+                    <a href="usage.html" class="btn btn-primary">Get Started →</a>
+                    <a href="https://github.com/rexdivakar/portainer_templates" class="btn btn-outline" target="_blank">View on GitHub</a>
                 </div>
             </div>
-            <div class="stats-panel" role="status" aria-live="polite">
-                <div class="stat">
+            <div class="stats">
+                <div class="stat-card">
                     <div class="stat-value" id="template-count">-</div>
                     <div class="stat-label">Templates</div>
                 </div>
-                <div class="stat">
+                <div class="stat-card">
                     <div class="stat-value" id="category-count">-</div>
                     <div class="stat-label">Categories</div>
                 </div>
-                <div class="stat">
+                <div class="stat-card">
                     <div class="stat-value">13</div>
                     <div class="stat-label">Sources</div>
                 </div>
@@ -54,107 +54,101 @@
         </div>
     </section>
 
-    <main id="main-content" class="main">
-        <div class="template-url-box">
-            <div class="url-box-header">
-                <h2>📋 Quick Setup</h2>
-                <p>Copy this URL and add it to your Portainer settings to access all templates</p>
-            </div>
-            <div class="url-box-content">
-                <div class="url-display" id="homepage-template-url">https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json</div>
-                <button class="btn btn-primary" onclick="copyTemplateUrl()" id="copy-url-btn">Copy URL</button>
+    <main id="main" class="main">
+        <div class="setup-box">
+            <div class="setup-title">📋 Quick Setup</div>
+            <p class="setup-desc">Copy this URL and add it to your Portainer settings to access all templates</p>
+            <div class="setup-url-row">
+                <div class="url-box" id="template-url">https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json</div>
+                <button class="btn-copy" onclick="copyTemplateUrl()" id="copy-btn">Copy URL</button>
             </div>
         </div>
 
-        <div class="control-bar">
-            <div class="control-card" role="search">
-                <form class="filter-form" onsubmit="return false;">
-                    <div class="search-box">
-                        <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
-                        <input type="search" id="search-input" class="search-input" placeholder="Search templates..." aria-label="Search templates" autocomplete="off">
-                    </div>
-                    <select id="category-filter" class="filter-select" aria-label="Filter by category">
-                        <option value="">All Categories</option>
-                    </select>
-                    <select id="type-filter" class="filter-select" aria-label="Filter by type">
-                        <option value="">All Types</option>
-                        <option value="1">Container</option>
-                        <option value="2">Stack</option>
-                        <option value="3">Compose</option>
-                    </select>
-                    <select id="sort-filter" class="filter-select" aria-label="Sort templates">
-                        <option value="name-asc">Name A-Z</option>
-                        <option value="name-desc">Name Z-A</option>
-                        <option value="category">By Category</option>
-                    </select>
-                </form>
+        <div class="filters-bar">
+            <div class="filters-left">
+                <div class="search-wrapper">
+                    <svg class="search-icon" width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+                    <input type="search" id="search-input" class="search-input" placeholder="Search templates..." autocomplete="off">
+                </div>
+                <select id="category-filter" class="filter-select">
+                    <option value="">All Categories</option>
+                </select>
+                <select id="type-filter" class="filter-select">
+                    <option value="">All Types</option>
+                    <option value="1">Container</option>
+                    <option value="2">Stack</option>
+                    <option value="3">Compose</option>
+                </select>
+                <select id="sort-filter" class="filter-select">
+                    <option value="name-asc">Name A-Z</option>
+                    <option value="name-desc">Name Z-A</option>
+                    <option value="category">By Category</option>
+                </select>
             </div>
-            <div class="control-card view-actions" aria-label="Display options">
-                <span class="results-count" id="results-count">Loading...</span>
-                <div class="view-buttons" role="group" aria-label="Template layout">
-                    <button class="view-btn active" data-view="grid" type="button">Grid</button>
-                    <button class="view-btn" data-view="list" type="button">List</button>
-                    <button class="view-btn" data-view="compact" type="button">Compact</button>
+            <div class="filters-right">
+                <span class="results-text" id="results-count">Loading...</span>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">Grid</button>
+                    <button class="view-btn" data-view="list">List</button>
+                    <button class="view-btn" data-view="compact">Compact</button>
                 </div>
             </div>
         </div>
 
-        <div id="validation-banner" class="validation-banner hidden" role="alert">
-            <span aria-hidden="true">⚠️</span>
+        <div id="validation-banner" class="validation-banner hidden">
+            <span>⚠️</span>
             <span id="validation-message"></span>
         </div>
 
         <div id="loading-state" class="loading-state">
-            <div class="spinner" role="status" aria-label="Loading templates"></div>
-            <p>Loading templates...</p>
+            <div class="spinner"></div>
+            <p class="state-desc">Loading templates...</p>
         </div>
 
-        <div id="error-state" class="error-state" style="display: none;">
-            <div class="empty-icon">⚠️</div>
-            <h3>Failed to Load Templates</h3>
-            <p id="error-message">Please check your connection and try again.</p>
-            <button class="btn btn-primary" onclick="loadTemplates()" style="margin-top: 1rem;">Retry</button>
+        <div id="error-state" class="error-state" style="display:none;">
+            <div class="state-icon">⚠️</div>
+            <h3 class="state-title">Failed to Load Templates</h3>
+            <p class="state-desc" id="error-message">Please check your connection and try again.</p>
+            <button class="btn btn-primary" onclick="loadTemplates()" style="margin-top:16px;">Retry</button>
         </div>
 
-        <div id="empty-state" class="empty-state" style="display: none;">
-            <div class="empty-icon">🔍</div>
-            <h3>No templates found</h3>
-            <p>Try adjusting your search or filters</p>
-            <button class="btn btn-secondary" onclick="clearFilters()" style="margin-top: 1rem;">Clear Filters</button>
+        <div id="empty-state" class="empty-state" style="display:none;">
+            <div class="state-icon">🔍</div>
+            <h3 class="state-title">No templates found</h3>
+            <p class="state-desc">Try adjusting your search or filters</p>
+            <button class="btn btn-outline" onclick="clearFilters()" style="margin-top:16px;">Clear Filters</button>
         </div>
 
-        <div id="template-grid" class="template-grid" data-view="grid" role="list" aria-label="Template list"></div>
+        <div id="template-grid" class="template-grid" data-view="grid"></div>
 
-        <section class="guide-grid" aria-label="Helpful guides">
-            <article class="guide-card">
+        <div class="tips-grid">
+            <div class="tip-card">
                 <h3>🚀 Deploy Anywhere</h3>
                 <p>Host on GitHub Pages, Netlify, or any static server. No build step required.</p>
-            </article>
-            <article class="guide-card">
+            </div>
+            <div class="tip-card">
                 <h3>🔍 Smart Search</h3>
                 <p>Find templates by name, category, or environment variables.</p>
-            </article>
-            <article class="guide-card">
+            </div>
+            <div class="tip-card">
                 <h3>🛡️ Security First</h3>
                 <p>Risk badges highlight privileged mode and exposed ports.</p>
-            </article>
-        </section>
+            </div>
+        </div>
     </main>
 
-    <footer class="footer" role="contentinfo">
-        <div class="footer-content">
+    <footer class="footer">
+        <div class="footer-inner">
             <div class="footer-links">
-                <a href="https://github.com/rexdivakar/portainer_templates" target="_blank" rel="noopener">GitHub</a>
-                <a href="https://github.com/rexdivakar/portainer_templates/issues" target="_blank" rel="noopener">Report Issue</a>
-                <a href="https://docs.portainer.io/" target="_blank" rel="noopener">Portainer Docs</a>
+                <a href="https://github.com/rexdivakar/portainer_templates" target="_blank">GitHub</a>
+                <a href="https://github.com/rexdivakar/portainer_templates/issues" target="_blank">Report Issue</a>
+                <a href="https://docs.portainer.io/" target="_blank">Portainer Docs</a>
             </div>
             <p class="footer-copy">© 2025 Portainer Templates. MIT License.</p>
         </div>
     </footer>
 
-    <div class="keyboard-hint" aria-hidden="true">
-        Press <kbd>/</kbd> to search
-    </div>
+    <div class="kbd-hint">Press <kbd>/</kbd> to search</div>
 
     <script src="js/app.js"></script>
 </body>
