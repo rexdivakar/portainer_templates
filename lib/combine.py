@@ -21,10 +21,19 @@ templates = []
 for file in files:
   file_path = os.path.join(templates_src_dir, file)
   if os.path.isfile(file_path) and file.endswith('.json'):
+    # Skip schema files
+    if 'schema' in file.lower():
+      print(f'{rgb(128, 128, 128)}Skipping schema file:{reset_color} {file}')
+      continue
     with open(file_path) as f:
       try:
         # Load the JSON into a variable
-        data = json.load(f)['templates']
+        json_data = json.load(f)
+        # Check if it has a 'templates' key
+        if 'templates' not in json_data:
+          print(f'{rgb(255, 165, 0)}Skipping file without templates key:{reset_color} {file}')
+          continue
+        data = json_data['templates']
         # Append the template object to the templates list
         templates = templates + data
       except json.decoder.JSONDecodeError as err:

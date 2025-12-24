@@ -1,5 +1,6 @@
 {
   "version": "2",
+<<<<<<< HEAD
   "templates": [
     {
       "type": 1,
@@ -19078,4 +19079,7 @@
     }
   ],
   "enriched_at": "2025-12-24T17:38:59.724498+00:00"
+=======
+  "templates": []
+>>>>>>> dd8bea9 (refactor: improve template loading with schema validation)
 }
