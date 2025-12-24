@@ -15,6 +15,9 @@
         FUZZY_THRESHOLD: 0.3
     };
 
+    const TYPE_LABELS = { 1: 'Container', 2: 'Stack', 3: 'Compose' };
+    const VIEW_MODES = ['grid', 'list', 'compact'];
+
     // State
     let state = {
         templates: [],
@@ -22,7 +25,8 @@
         categories: new Set(),
         isLoading: true,
         error: null,
-        validationWarnings: []
+        validationWarnings: [],
+        viewMode: 'grid'
     };
 
     // DOM Elements
@@ -34,6 +38,7 @@
     async function init() {
         cacheElements();
         setupEventListeners();
+        setupScrollObserver();
         await loadTemplates();
         restoreStateFromURL();
     }
@@ -53,6 +58,7 @@
         elements.categoryCount = document.getElementById('category-count');
         elements.validationBanner = document.getElementById('validation-banner');
         elements.validationMessage = document.getElementById('validation-message');
+        elements.viewButtons = Array.from(document.querySelectorAll('.view-btn'));
     }
 
     function setupEventListeners() {
@@ -75,8 +81,59 @@
             }
         });
 
+        // View toggle buttons
+        elements.viewButtons?.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const mode = btn.dataset.view || 'grid';
+                setViewMode(mode);
+            });
+        });
+
         // Handle browser back/forward
         window.addEventListener('popstate', restoreStateFromURL);
+    }
+
+    function setupScrollObserver() {
+        const header = document.querySelector('.header');
+        if (!header) return;
+
+        let lastScroll = 0;
+        const scrollThreshold = 10;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > scrollThreshold) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        }, { passive: true });
+    }
+
+    function setViewMode(mode, options = {}) {
+        const normalized = VIEW_MODES.includes(mode) ? mode : 'grid';
+        const force = options.force || false;
+
+        if (!force && state.viewMode === normalized) {
+            return;
+        }
+
+        state.viewMode = normalized;
+
+        if (elements.templateGrid) {
+            elements.templateGrid.dataset.view = normalized;
+        }
+
+        elements.viewButtons?.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.view === normalized);
+        });
+
+        if (!options.skipURL) {
+            updateURLState();
+        }
     }
 
     async function loadTemplates() {
@@ -129,13 +186,14 @@
         state.categories = new Set();
         state.validationWarnings = [];
 
-        // Extract categories and validate
+        // Extract categories, prepare metadata, and validate
         state.templates.forEach((template, index) => {
+            prepareTemplate(template);
+
             if (template.categories) {
                 template.categories.forEach(cat => state.categories.add(cat));
             }
             
-            // Basic validation
             const warnings = validateTemplate(template, index);
             if (warnings.length > 0) {
                 state.validationWarnings.push(...warnings);
@@ -238,15 +296,7 @@
     }
 
     function fuzzyMatch(template, searchTerm) {
-        const searchFields = [
-            template.title || '',
-            template.description || '',
-            template.name || '',
-            ...(template.categories || []),
-            ...(template.env || []).map(e => e.name || e.label || '')
-        ].join(' ').toLowerCase();
-
-        // Simple fuzzy: check if all search words are present
+        const searchFields = template._searchText || '';
         const searchWords = searchTerm.split(/\s+/).filter(w => w.length > 0);
         return searchWords.every(word => searchFields.includes(word));
     }
@@ -274,36 +324,173 @@
     function renderTemplates() {
         if (!elements.templateGrid) return;
 
+        // Ensure grid is visible
+        elements.templateGrid.style.display = 'grid';
+
         // Update results count
         if (elements.resultsCount) {
-            elements.resultsCount.textContent = 
+            elements.resultsCount.textContent =
                 `${state.filteredTemplates.length} of ${state.templates.length} templates`;
         }
 
         // Show empty state if no results
         if (state.filteredTemplates.length === 0) {
             elements.templateGrid.innerHTML = '';
-            elements.emptyState.style.display = 'block';
+            if (elements.emptyState) {
+                elements.emptyState.style.display = 'block';
+            }
             return;
         }
 
-        elements.emptyState.style.display = 'none';
+        if (elements.emptyState) {
+            elements.emptyState.style.display = 'none';
+        }
 
-        // Render template cards
-        const html = state.filteredTemplates.map(template => createTemplateCard(template)).join('');
-        elements.templateGrid.innerHTML = html;
+        const fragment = document.createDocumentFragment();
+        state.filteredTemplates.forEach(template => {
+            if (!template._element) {
+                prepareTemplate(template);
+            }
+            // Clone the node to avoid issues with moving elements
+            const cardElement = template._element.cloneNode(true);
+            fragment.appendChild(cardElement);
+        });
+        elements.templateGrid.replaceChildren(fragment);
     }
 
-    function createTemplateCard(template) {
-        const name = template.name || template.title || 'untitled';
-        const title = escapeHtml(template.title || 'Untitled');
-        const description = escapeHtml(template.description || 'No description available');
-        const category = template.categories?.[0] || '';
-        const type = template.type || 1;
-        const platform = template.platform || '';
-        const logo = template.logo || '';
+    function prepareTemplate(template = {}) {
+        const pieces = [
+            template.title,
+            template.name,
+            template.description,
+            template.image,
+            template.platform,
+            ...(template.categories || []),
+            ...(template.env || []).flatMap(env => [env.name, env.label, env.description])
+        ];
 
-        // Risk indicators
+        template._searchText = pieces
+            .filter(Boolean)
+            .join(' ')
+            .toLowerCase();
+
+        template._element = buildTemplateElement(template);
+    }
+
+    function buildTemplateElement(template) {
+        const article = document.createElement('article');
+        article.className = 'template-card';
+        article.setAttribute('role', 'listitem');
+
+        const header = document.createElement('div');
+        header.className = 'card-header';
+
+        const logoWrapper = document.createElement('div');
+        logoWrapper.className = 'card-logo';
+
+        const showPlaceholder = () => {
+            logoWrapper.innerHTML = '';
+            const placeholder = document.createElement('span');
+            placeholder.className = 'card-logo-placeholder';
+            placeholder.textContent = '📦';
+            logoWrapper.appendChild(placeholder);
+        };
+
+        if (template.logo) {
+            const img = document.createElement('img');
+            img.loading = 'lazy';
+            img.decoding = 'async';
+            img.src = template.logo;
+            img.alt = '';
+            img.addEventListener('error', showPlaceholder, { once: true });
+            logoWrapper.appendChild(img);
+        } else {
+            showPlaceholder();
+        }
+
+        const titleSection = document.createElement('div');
+        titleSection.className = 'card-title-section';
+        const title = document.createElement('h3');
+        title.className = 'card-title';
+        title.textContent = template.title || 'Untitled';
+        titleSection.appendChild(title);
+
+        const badgeRow = document.createElement('div');
+        badgeRow.className = 'card-badges';
+        if (template.categories?.length) {
+            const catBadge = document.createElement('span');
+            catBadge.className = 'badge badge-category';
+            catBadge.textContent = template.categories[0];
+            badgeRow.appendChild(catBadge);
+        }
+        const typeBadge = document.createElement('span');
+        typeBadge.className = 'badge badge-type';
+        typeBadge.textContent = TYPE_LABELS[template.type] || 'Container';
+        badgeRow.appendChild(typeBadge);
+        if (template.platform) {
+            const platformBadge = document.createElement('span');
+            platformBadge.className = 'badge badge-platform';
+            platformBadge.textContent = template.platform;
+            badgeRow.appendChild(platformBadge);
+        }
+        titleSection.appendChild(badgeRow);
+
+        header.appendChild(logoWrapper);
+        header.appendChild(titleSection);
+
+        const body = document.createElement('div');
+        body.className = 'card-body';
+        const desc = document.createElement('p');
+        desc.className = 'card-description';
+        desc.textContent = template.description || 'No description available yet.';
+        body.appendChild(desc);
+
+        const risks = getRiskIndicators(template);
+        if (risks.length) {
+            const riskWrap = document.createElement('div');
+            riskWrap.className = 'risk-indicators';
+            risks.forEach(risk => {
+                const badge = document.createElement('span');
+                badge.className = `risk-badge ${risk.type}`;
+                badge.textContent = `${risk.icon} ${risk.label}`;
+                badge.title = risk.label;
+                riskWrap.appendChild(badge);
+            });
+            body.appendChild(riskWrap);
+        }
+
+        const footer = document.createElement('div');
+        footer.className = 'card-footer';
+
+        const meta = document.createElement('div');
+        meta.className = 'card-meta';
+        if (template.env?.length) {
+            const envStat = document.createElement('span');
+            envStat.textContent = `📝 ${template.env.length} env vars`;
+            meta.appendChild(envStat);
+        }
+        if (template.volumes?.length) {
+            const volStat = document.createElement('span');
+            volStat.textContent = `💾 ${template.volumes.length} volumes`;
+            meta.appendChild(volStat);
+        }
+        footer.appendChild(meta);
+
+        const link = document.createElement('a');
+        link.className = 'btn btn-primary btn-sm';
+        const slug = template.name || template.title || 'untitled';
+        link.href = `template.html?name=${encodeURIComponent(slug)}`;
+        link.textContent = 'View Details →';
+        footer.appendChild(link);
+
+        article.appendChild(header);
+        article.appendChild(body);
+        article.appendChild(footer);
+
+        return article;
+    }
+
+    function getRiskIndicators(template) {
         const risks = [];
         if (template.privileged) {
             risks.push({ type: 'danger', label: 'Privileged', icon: '⚠️' });
@@ -314,50 +501,7 @@
         if (template.ports?.length > 3) {
             risks.push({ type: 'warning', label: `${template.ports.length} Ports`, icon: '🔌' });
         }
-
-        const typeLabels = { 1: 'Container', 2: 'Stack', 3: 'Compose' };
-
-        return `
-            <article class="template-card fade-in" role="listitem">
-                <div class="card-header">
-                    <div class="card-logo">
-                        ${logo 
-                            ? `<img src="${escapeHtml(logo)}" alt="" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'card-logo-placeholder\\'>📦</span>'">`
-                            : '<span class="card-logo-placeholder">📦</span>'
-                        }
-                    </div>
-                    <div class="card-title-section">
-                        <h3 class="card-title">${title}</h3>
-                        <div class="card-badges">
-                            ${category ? `<span class="badge badge-category">${escapeHtml(category)}</span>` : ''}
-                            <span class="badge badge-type">${typeLabels[type] || 'Container'}</span>
-                            ${platform ? `<span class="badge badge-platform">${escapeHtml(platform)}</span>` : ''}
-                        </div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <p class="card-description">${description}</p>
-                    ${risks.length > 0 ? `
-                        <div class="risk-indicators">
-                            ${risks.map(r => `
-                                <span class="risk-badge ${r.type}" title="${r.label}">
-                                    ${r.icon} ${r.label}
-                                </span>
-                            `).join('')}
-                        </div>
-                    ` : ''}
-                </div>
-                <div class="card-footer">
-                    <div class="card-meta">
-                        ${template.env?.length ? `<span>📝 ${template.env.length} env vars</span>` : ''}
-                        ${template.volumes?.length ? `<span>💾 ${template.volumes.length} volumes</span>` : ''}
-                    </div>
-                    <a href="template.html?name=${encodeURIComponent(name)}" class="btn btn-primary btn-sm">
-                        View Details →
-                    </a>
-                </div>
-            </article>
-        `;
+        return risks;
     }
 
     // URL State Management
@@ -375,6 +519,10 @@
         }
         if (elements.sortFilter?.value && elements.sortFilter.value !== 'name-asc') {
             params.set('sort', elements.sortFilter.value);
+        }
+
+        if (state.viewMode && state.viewMode !== 'grid') {
+            params.set('view', state.viewMode);
         }
 
         const newURL = params.toString() 
@@ -398,6 +546,12 @@
         }
         if (elements.sortFilter && params.has('sort')) {
             elements.sortFilter.value = params.get('sort');
+        }
+
+        if (params.has('view')) {
+            setViewMode(params.get('view'), { skipURL: true, force: true });
+        } else {
+            setViewMode('grid', { skipURL: true, force: true });
         }
 
         if (state.templates.length > 0) {
