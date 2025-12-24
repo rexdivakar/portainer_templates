@@ -56,6 +56,20 @@
 
     <!-- Main Content -->
     <main id="main-content" class="main">
+        <!-- Template URL Box -->
+        <div class="template-url-box">
+            <div class="url-box-header">
+                <h2>📋 Portainer Template URL</h2>
+                <p>Copy this URL and add it to your Portainer settings to access all templates</p>
+            </div>
+            <div class="url-box-content">
+                <div class="url-display" id="homepage-template-url">https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json</div>
+                <button class="btn btn-primary" onclick="copyTemplateUrl()" id="copy-url-btn">
+                    📋 Copy URL
+                </button>
+            </div>
+        </div>
+
         <section class="control-bar">
             <div class="control-card" role="search">
                 <form class="filter-form" onsubmit="return false;">

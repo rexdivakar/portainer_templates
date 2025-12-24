@@ -636,6 +636,29 @@
         handleFilterChange();
     };
 
+    window.copyTemplateUrl = function() {
+        const urlElement = document.getElementById('homepage-template-url');
+        const btnElement = document.getElementById('copy-url-btn');
+
+        if (!urlElement || !btnElement) return;
+
+        const url = urlElement.textContent;
+
+        navigator.clipboard.writeText(url).then(() => {
+            const originalText = btnElement.innerHTML;
+            btnElement.innerHTML = '✅ Copied!';
+            btnElement.style.background = 'var(--color-success)';
+
+            setTimeout(() => {
+                btnElement.innerHTML = originalText;
+                btnElement.style.background = '';
+            }, 2000);
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            alert('Failed to copy URL. Please copy manually.');
+        });
+    };
+
     window.loadTemplates = loadTemplates;
 
 })();
