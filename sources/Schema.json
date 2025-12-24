@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Portainer Templates Schema",
+  "description": "JSON Schema for validating Portainer template files",
+  "type": "object",
+  "required": ["version", "templates"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Template format version"
+    },
+    "templates": {
+      "type": "array",
+      "description": "Array of template definitions",
+      "items": {
+        "type": "object",
+        "required": ["type", "title"],
+        "properties": {
+          "type": {
+            "type": "integer",
+            "description": "Template type: 1=container, 2=swarm stack, 3=compose stack",
+            "enum": [1, 2, 3]
+          },
+          "title": {
+            "type": "string",
+            "description": "Template display name",
+            "minLength": 1
+          },
+          "name": {
+            "type": "string",
+            "description": "Container name"
+          },
+          "description": {
+            "type": "string",
+            "description": "Template description"
+          },
+          "categories": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "platform": {
+            "type": "string",
+            "enum": ["linux", "windows"]
+          },
+          "logo": {
+            "type": "string",
+            "description": "URL to logo image"
+          },
+          "image": {
+            "type": "string",
+            "description": "Docker image"
+          },
+          "env": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name"],
+              "properties": {
+                "name": { "type": "string" },
+                "label": { "type": "string" },
+                "default": { "type": "string" },
+                "preset": { "type": "boolean" },
+                "description": { "type": "string" }
+              }
+            }
+          },
+          "ports": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "volumes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "container": { "type": "string" },
+                "bind": { "type": "string" }
+              }
+            }
+          },
+          "privileged": { "type": "boolean" },
+          "network": { "type": "string" },
+          "restart_policy": { "type": "string" },
+          "maintainer": { "type": "string" },
+          "note": { "type": "string" },
+          "repository": {
+            "type": "object",
+            "properties": {
+              "url": { "type": "string" },
+              "stackfile": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}
