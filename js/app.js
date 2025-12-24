@@ -11,7 +11,7 @@
         DEBOUNCE_DELAY: 150
     };
 
-    const TYPE_LABELS = { 1: 'Container', 2: 'Stack', 3: 'Compose' };
+    const TYPE_LABELS = { 1: 'Container', 2: 'Stack', 3: 'Compose', 4: 'Edge' };
 
     let state = {
         templates: [],

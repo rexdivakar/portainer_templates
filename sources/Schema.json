@@ -18,8 +18,8 @@
         "properties": {
           "type": {
             "type": "integer",
-            "description": "Template type: 1=container, 2=swarm stack, 3=compose stack",
-            "enum": [1, 2, 3]
+            "description": "Template type: 1=container, 2=swarm stack, 3=compose stack, 4=edge stack",
+            "enum": [1, 2, 3, 4]
           },
           "title": {
             "type": "string",
