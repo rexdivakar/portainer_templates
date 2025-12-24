@@ -1,0 +1,67 @@
+name: 🔍 CI - Lint & Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Python dependencies
+        run: pip install jsonschema
+
+      - name: Validate HTML
+        run: |
+          npx html-validate index.html template.html usage.html || true
+
+      - name: Lint CSS
+        run: |
+          npx stylelint "css/**/*.css" --fix || true
+
+      - name: Lint JavaScript
+        run: |
+          npx eslint "js/**/*.js" --fix || true
+
+      - name: Validate templates.json schema
+        run: python lib/validate.py
+
+      - name: Check for duplicate template titles
+        run: |
+          python -c "
+          import json
+          with open('templates.json') as f:
+              data = json.load(f)
+          titles = [t.get('title', '').lower() for t in data.get('templates', [])]
+          duplicates = [t for t in set(titles) if titles.count(t) > 1]
+          if duplicates:
+              print(f'⚠️ Duplicate titles found: {duplicates}')
+          else:
+              print('✅ No duplicate titles')
+          "
+
+      - name: Count templates
+        run: |
+          python -c "
+          import json
+          with open('templates.json') as f:
+              data = json.load(f)
+          count = len(data.get('templates', []))
+          print(f'📦 Total templates: {count}')
+          "
