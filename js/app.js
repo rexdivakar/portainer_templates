@@ -192,11 +192,11 @@
         if (!state.filteredTemplates.length) {
             el.templateGrid.innerHTML = '';
             el.templateGrid.style.display = 'none';
-            if (el.emptyState) el.emptyState.style.display = 'block';
+            if (el.emptyState) el.emptyState.classList.remove('hidden');
             return;
         }
 
-        if (el.emptyState) el.emptyState.style.display = 'none';
+        if (el.emptyState) el.emptyState.classList.add('hidden');
         el.templateGrid.style.display = 'grid';
 
         // Build all cards HTML
@@ -212,33 +212,31 @@
         const badges = [];
         if (t.categories?.[0]) badges.push(`<span class="badge badge-category">${esc(t.categories[0])}</span>`);
         badges.push(`<span class="badge badge-type">${TYPE_LABELS[t.type] || 'Container'}</span>`);
-        if (t.platform) badges.push(`<span class="badge badge-platform">${esc(t.platform)}</span>`);
 
         const risks = [];
         if (t.privileged) risks.push('<span class="risk-badge danger">⚠️ Privileged</span>');
         if (t.network === 'host') risks.push('<span class="risk-badge warning">🌐 Host Net</span>');
-        if (t.ports?.length > 3) risks.push(`<span class="risk-badge warning">🔌 ${t.ports.length} Ports</span>`);
 
         const meta = [];
+        const docker = t.metadata?.docker;
+        if (docker?.pulls) meta.push(`<span>⬇️ ${docker.pulls_formatted || formatNum(docker.pulls)}</span>`);
         if (t.env?.length) meta.push(`<span>📝 ${t.env.length} vars</span>`);
         if (t.volumes?.length) meta.push(`<span>💾 ${t.volumes.length} vols</span>`);
 
         return `
             <article class="template-card" data-index="${idx}">
-                <div class="card-top">
+                <div class="card-header">
                     <div class="card-logo">${logoHtml}</div>
-                    <div class="card-header">
+                    <div class="card-info">
                         <div class="card-title">${esc(t.title || 'Untitled')}</div>
                         <div class="card-badges">${badges.join('')}</div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <p class="card-desc">${esc(t.description || 'No description available.')}</p>
-                    ${risks.length ? `<div class="risk-badges">${risks.join('')}</div>` : ''}
-                </div>
+                <p class="card-desc">${esc(t.description || 'No description available.')}</p>
+                ${risks.length ? `<div class="risk-badges">${risks.join('')}</div>` : ''}
                 <div class="card-footer">
                     <div class="card-meta">${meta.join('')}</div>
-                    <span class="card-action">View Details →</span>
+                    <span class="card-action">Details →</span>
                 </div>
             </article>
         `;
@@ -269,13 +267,13 @@
         if (t.network === 'host') risks.push('<span class="risk-badge warning">🌐 Host Network</span>');
         if (t.ports?.length > 3) risks.push(`<span class="risk-badge warning">🔌 ${t.ports.length} Ports</span>`);
 
-        const dockerRun = genDockerRun(t);
-        const dockerCompose = genDockerCompose(t);
-        
         // Build metadata sections
         const meta = t.metadata || {};
         const docker = meta.docker || {};
         const github = meta.github || {};
+        
+        // Create editable template copy
+        const editableTemplate = JSON.parse(JSON.stringify(t));
 
         overlay.innerHTML = `
             <div class="modal">
@@ -290,12 +288,13 @@
                     <button class="modal-close" id="modal-close-btn">✕</button>
                 </div>
                 <div class="modal-body">
-                    ${(docker.pulls || github.stars) ? `
+                    ${(docker.pulls || docker.stars || github.stars) ? `
                     <div class="modal-stats">
-                        ${docker.pulls ? `<div class="modal-stat"><span class="stat-icon">⬇️</span><span class="stat-num">${docker.pulls_formatted || docker.pulls}</span><span class="stat-text">pulls</span></div>` : ''}
-                        ${docker.stars ? `<div class="modal-stat"><span class="stat-icon">⭐</span><span class="stat-num">${docker.stars}</span><span class="stat-text">Docker stars</span></div>` : ''}
-                        ${github.stars ? `<div class="modal-stat"><span class="stat-icon">🌟</span><span class="stat-num">${github.stars}</span><span class="stat-text">GitHub stars</span></div>` : ''}
-                        ${github.forks ? `<div class="modal-stat"><span class="stat-icon">🍴</span><span class="stat-num">${github.forks}</span><span class="stat-text">forks</span></div>` : ''}
+                        ${docker.pulls ? `<div class="modal-stat"><span class="stat-icon">⬇️</span><span class="stat-num">${docker.pulls_formatted || formatNum(docker.pulls)}</span><span class="stat-text">Docker pulls</span></div>` : ''}
+                        ${docker.stars ? `<div class="modal-stat"><span class="stat-icon">⭐</span><span class="stat-num">${formatNum(docker.stars)}</span><span class="stat-text">Docker stars</span></div>` : ''}
+                        ${github.stars ? `<div class="modal-stat"><span class="stat-icon">🌟</span><span class="stat-num">${formatNum(github.stars)}</span><span class="stat-text">GitHub stars</span></div>` : ''}
+                        ${github.forks ? `<div class="modal-stat"><span class="stat-icon">🍴</span><span class="stat-num">${formatNum(github.forks)}</span><span class="stat-text">forks</span></div>` : ''}
+                        ${github.issues ? `<div class="modal-stat"><span class="stat-icon">🐛</span><span class="stat-num">${github.issues}</span><span class="stat-text">issues</span></div>` : ''}
                     </div>
                     ` : ''}
 
@@ -316,17 +315,29 @@
                                 <div class="modal-info-label">Platform</div>
                                 <div class="modal-info-value">${esc(t.platform || 'linux')}</div>
                             </div>
-                            <div class="modal-info-item">
+                            ${t.restart_policy ? `<div class="modal-info-item"><div class="modal-info-label">Restart</div><div class="modal-info-value">${esc(t.restart_policy)}</div></div>` : ''}
+                            ${t.network ? `<div class="modal-info-item"><div class="modal-info-label">Network</div><div class="modal-info-value">${esc(t.network)}</div></div>` : ''}
+                            ${github.license ? `<div class="modal-info-item"><div class="modal-info-label">License</div><div class="modal-info-value">${esc(github.license)}</div></div>` : ''}
+                            <div class="modal-info-item span-2">
                                 <div class="modal-info-label">Image</div>
                                 <div class="modal-info-value">${esc(t.image || '-')}</div>
                             </div>
-                            ${t.ports?.length ? `<div class="modal-info-item"><div class="modal-info-label">Ports</div><div class="modal-info-value">${t.ports.join(', ')}</div></div>` : ''}
-                            ${t.restart_policy ? `<div class="modal-info-item"><div class="modal-info-label">Restart</div><div class="modal-info-value">${esc(t.restart_policy)}</div></div>` : ''}
-                            ${t.network ? `<div class="modal-info-item"><div class="modal-info-label">Network</div><div class="modal-info-value">${esc(t.network)}</div></div>` : ''}
-                            ${t.command ? `<div class="modal-info-item"><div class="modal-info-label">Command</div><div class="modal-info-value">${esc(t.command)}</div></div>` : ''}
-                            ${github.license ? `<div class="modal-info-item"><div class="modal-info-label">License</div><div class="modal-info-value">${esc(github.license)}</div></div>` : ''}
+                            ${t.command ? `<div class="modal-info-item span-2"><div class="modal-info-label">Command</div><div class="modal-info-value">${esc(t.command)}</div></div>` : ''}
                         </div>
                     </div>
+
+                    ${t.ports?.length ? `
+                    <div class="modal-section">
+                        <div class="modal-section-title">Ports</div>
+                        <div class="env-list">
+                            ${t.ports.map(p => `
+                                <div class="env-item">
+                                    <code class="env-name">${esc(p)}</code>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
 
                     ${(docker.hub_url || github.url) ? `
                     <div class="modal-section">
@@ -340,12 +351,12 @@
 
                     ${t.env?.length ? `
                     <div class="modal-section">
-                        <div class="modal-section-title">Environment Variables</div>
-                        <div class="env-list">
-                            ${t.env.map(e => `
+                        <div class="modal-section-title">Environment Variables <span style="font-weight:400;text-transform:none;letter-spacing:0">(edit values, then copy command)</span></div>
+                        <div class="env-list" id="env-list">
+                            ${t.env.map((e, i) => `
                                 <div class="env-item">
-                                    <code class="env-name">${esc(e.name)}</code>
-                                    <span class="env-default">${e.default || e.preset || e.label || '-'}</span>
+                                    <span class="env-name">${esc(e.name)}</span>
+                                    <input type="text" class="env-value" data-env-idx="${i}" value="${esc(e.default || e.preset || '')}" placeholder="${esc(e.label || 'Enter value...')}">
                                 </div>
                             `).join('')}
                         </div>
@@ -354,12 +365,12 @@
 
                     ${t.volumes?.length ? `
                     <div class="modal-section">
-                        <div class="modal-section-title">Volumes</div>
-                        <div class="env-list">
-                            ${t.volumes.map(v => `
+                        <div class="modal-section-title">Volumes <span style="font-weight:400;text-transform:none;letter-spacing:0">(edit host paths)</span></div>
+                        <div class="env-list" id="vol-list">
+                            ${t.volumes.map((v, i) => `
                                 <div class="env-item">
-                                    <code class="env-name">${esc(v.container)}</code>
-                                    <span class="env-default">${v.bind || 'auto'}</span>
+                                    <span class="env-name">${esc(v.container)}</span>
+                                    <input type="text" class="env-value" data-vol-idx="${i}" value="${esc(v.bind || '')}" placeholder="/your/host/path">
                                 </div>
                             `).join('')}
                         </div>
@@ -371,9 +382,9 @@
                         <div class="code-block">
                             <div class="code-header">
                                 <span class="code-title">Terminal</span>
-                                <button class="copy-btn" data-copy="${encodeURIComponent(dockerRun)}">Copy</button>
+                                <button class="copy-btn" id="copy-run-btn">Copy</button>
                             </div>
-                            <pre class="code-content">${esc(dockerRun)}</pre>
+                            <pre class="code-content" id="docker-run-code"></pre>
                         </div>
                     </div>
 
@@ -382,9 +393,9 @@
                         <div class="code-block">
                             <div class="code-header">
                                 <span class="code-title">docker-compose.yml</span>
-                                <button class="copy-btn" data-copy="${encodeURIComponent(dockerCompose)}">Copy</button>
+                                <button class="copy-btn" id="copy-compose-btn">Copy</button>
                             </div>
-                            <pre class="code-content">${esc(dockerCompose)}</pre>
+                            <pre class="code-content" id="docker-compose-code"></pre>
                         </div>
                     </div>
                 </div>
@@ -393,15 +404,40 @@
 
         document.body.appendChild(overlay);
         
+        // Store editable template reference
+        overlay._template = editableTemplate;
+        
+        // Initial render of docker commands
+        updateDockerCommands(overlay);
+        
         // Add event listeners
         document.getElementById('modal-close-btn')?.addEventListener('click', closeModal);
-        overlay.querySelectorAll('.copy-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                const text = decodeURIComponent(btn.dataset.copy);
-                navigator.clipboard.writeText(text).then(() => {
-                    btn.textContent = '✓ Copied!';
-                    setTimeout(() => btn.textContent = 'Copy', 2000);
-                });
+        
+        // Copy buttons
+        document.getElementById('copy-run-btn')?.addEventListener('click', function() {
+            const code = document.getElementById('docker-run-code')?.textContent || '';
+            copyToClipboard(code, this);
+        });
+        
+        document.getElementById('copy-compose-btn')?.addEventListener('click', function() {
+            const code = document.getElementById('docker-compose-code')?.textContent || '';
+            copyToClipboard(code, this);
+        });
+        
+        // Listen for env/volume changes
+        overlay.querySelectorAll('.env-value').forEach(input => {
+            input.addEventListener('input', () => {
+                const envIdx = input.dataset.envIdx;
+                const volIdx = input.dataset.volIdx;
+                
+                if (envIdx !== undefined && editableTemplate.env?.[envIdx]) {
+                    editableTemplate.env[envIdx].default = input.value;
+                }
+                if (volIdx !== undefined && editableTemplate.volumes?.[volIdx]) {
+                    editableTemplate.volumes[volIdx].bind = input.value;
+                }
+                
+                updateDockerCommands(overlay);
             });
         });
 
@@ -420,6 +456,37 @@
             setTimeout(() => overlay.remove(), 200);
         }
         document.body.style.overflow = '';
+    }
+
+    function updateDockerCommands(overlay) {
+        const t = overlay._template;
+        if (!t) return;
+        
+        const runCode = document.getElementById('docker-run-code');
+        const composeCode = document.getElementById('docker-compose-code');
+        
+        if (runCode) runCode.textContent = genDockerRun(t);
+        if (composeCode) composeCode.textContent = genDockerCompose(t);
+    }
+    
+    function copyToClipboard(text, btn) {
+        navigator.clipboard.writeText(text).then(() => {
+            const orig = btn.textContent;
+            btn.textContent = '✓ Copied!';
+            btn.style.background = 'var(--green-600)';
+            setTimeout(() => {
+                btn.textContent = orig;
+                btn.style.background = '';
+            }, 2000);
+        });
+    }
+    
+    function formatNum(n) {
+        if (!n) return '0';
+        if (n >= 1000000000) return (n / 1000000000).toFixed(1) + 'B';
+        if (n >= 1000000) return (n / 1000000).toFixed(1) + 'M';
+        if (n >= 1000) return (n / 1000).toFixed(1) + 'K';
+        return n.toString();
     }
 
     // Generate Docker Run command
@@ -543,14 +610,14 @@
 
     // UI helpers
     function showLoading(show) {
-        if (el.loadingState) el.loadingState.style.display = show ? 'block' : 'none';
+        if (el.loadingState) el.loadingState.classList.toggle('hidden', !show);
         if (el.templateGrid) el.templateGrid.style.display = show ? 'none' : 'grid';
     }
 
     function showError(msg) {
-        if (el.loadingState) el.loadingState.style.display = 'none';
+        if (el.loadingState) el.loadingState.classList.add('hidden');
         if (el.errorState) {
-            el.errorState.style.display = 'block';
+            el.errorState.classList.remove('hidden');
             if (el.errorMessage) el.errorMessage.textContent = msg;
         }
     }
@@ -574,13 +641,22 @@
 
     window.copyTemplateUrl = function() {
         const url = document.getElementById('template-url')?.textContent;
+        const btn = document.getElementById('copy-btn');
+        const box = document.getElementById('url-box');
         if (url) {
             navigator.clipboard.writeText(url).then(() => {
-                const btn = document.getElementById('copy-btn');
                 if (btn) {
                     btn.textContent = '✓ Copied!';
-                    setTimeout(() => btn.textContent = 'Copy URL', 2000);
+                    btn.style.background = 'var(--green-600)';
                 }
+                if (box) box.style.boxShadow = '0 0 0 3px var(--green-100)';
+                setTimeout(() => {
+                    if (btn) {
+                        btn.textContent = 'Click to Copy';
+                        btn.style.background = '';
+                    }
+                    if (box) box.style.boxShadow = '';
+                }, 2000);
             });
         }
     };

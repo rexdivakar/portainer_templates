@@ -3,23 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="How to install Portainer Templates">
-    <meta name="theme-color" content="#3b82f6">
+    <meta name="description" content="Learn how to add Portainer templates to your Portainer instance.">
     <title>Install Guide - Portainer Templates</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐳</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <a href="#main" class="skip-link">Skip to main content</a>
-
     <header class="header">
         <div class="header-inner">
             <a href="index.html" class="logo">
-                <span class="logo-icon">🐳</span>
+                <div class="logo-icon">🐳</div>
                 <span>Portainer Templates</span>
             </a>
             <nav class="nav">
-                <a href="index.html" class="nav-link">Templates</a>
+                <a href="index.html" class="nav-link">Browse</a>
                 <a href="usage.html" class="nav-link">Install Guide</a>
                 <a href="https://github.com/rexdivakar/portainer_templates" class="nav-link" target="_blank">GitHub</a>
                 <a href="usage.html" class="nav-link primary">Get Started</a>
@@ -27,72 +27,66 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-inner">
-            <div class="hero-text">
-                <h1 class="hero-title">Install on Portainer</h1>
-                <p class="hero-desc">Get access to hundreds of ready-to-deploy container templates in just a few clicks.</p>
-            </div>
-        </div>
-    </section>
+    <div class="page-header">
+        <h1 class="page-title">Install Guide</h1>
+        <p class="page-desc">Add these templates to your Portainer instance in minutes</p>
+    </div>
 
-    <main id="main" class="detail-page">
-        <div class="section-card">
-            <h2 class="section-title">🔗 Template URL</h2>
-            <p style="color:var(--gray-500);margin-bottom:16px;">Copy this URL and paste it into your Portainer settings</p>
-            <div class="url-row">
-                <div class="url-box" id="template-url">https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json</div>
+    <div class="page-content">
+        <div class="content-card">
+            <h2>📋 Template URL</h2>
+            <p style="color: var(--gray-600); margin-bottom: 16px;">Copy this URL and add it to your Portainer settings:</p>
+            <div class="setup-url" style="max-width: 100%;">
+                <input type="text" class="url-input" id="template-url" value="https://raw.githubusercontent.com/rexdivakar/portainer_templates/main/templates.json" readonly style="flex: 1;">
                 <button class="btn btn-primary" onclick="copyUrl()">Copy URL</button>
             </div>
         </div>
 
-        <div class="section-card">
-            <h2 class="section-title">📖 Installation Steps</h2>
-            <ol class="install-steps">
-                <li>Ensure <a href="https://docs.docker.com/get-docker/" target="_blank">Docker</a> and <a href="https://docs.portainer.io/start/install" target="_blank">Portainer</a> are installed and up-to-date</li>
-                <li>Log into your Portainer web UI</li>
-                <li>Navigate to <strong>Settings → App Templates</strong></li>
-                <li>Paste the URL above into the <strong>URL</strong> field</li>
+        <div class="content-card">
+            <h2>🚀 Installation Steps</h2>
+            <ol>
+                <li>Open your <a href="https://www.portainer.io/" target="_blank">Portainer</a> instance</li>
+                <li>Navigate to <strong>Settings</strong> in the left sidebar</li>
+                <li>Scroll down to <strong>App Templates</strong> section</li>
+                <li>Paste the template URL in the <strong>URL</strong> field</li>
                 <li>Click <strong>Save settings</strong></li>
-                <li>Go to <strong>App Templates</strong> in the sidebar</li>
-                <li>Select any template and click <strong>Deploy</strong></li>
+                <li>Go to <strong>App Templates</strong> to see all available templates</li>
             </ol>
-        </div>
-
-        <div class="note-box info">
-            <span class="note-icon">💡</span>
-            <div class="note-content">
-                <strong>Tip:</strong> Templates are synced weekly from multiple community sources.
-            </div>
-        </div>
-
-        <div class="note-box warning">
-            <span class="note-icon">⚠️</span>
-            <div class="note-content">
-                <strong>Security:</strong> Some templates require privileged mode. Always review before deploying.
-            </div>
-        </div>
-
-        <div class="section-card">
-            <h2 class="section-title">🏠 Self-Hosting</h2>
-            <p style="color:var(--gray-500);margin-bottom:16px;">Host this template browser yourself - it's just static files!</p>
-            <div class="code-block">
-                <div class="code-header">
-                    <span class="code-title">Clone & Serve</span>
+            
+            <div class="note-box info">
+                <span class="note-icon">💡</span>
+                <div class="note-content">
+                    <strong>Tip:</strong> Templates are cached by Portainer. If you don't see new templates, try clearing your browser cache or restarting Portainer.
                 </div>
-                <pre class="code-content"># Clone the repository
-git clone https://github.com/rexdivakar/portainer_templates.git
-cd portainer_templates
-
-# Serve with any static server
-python -m http.server 8080</pre>
             </div>
         </div>
 
-        <div style="text-align:center;margin-top:32px;">
-            <a href="index.html" class="btn btn-primary">← Browse All Templates</a>
+        <div class="content-card">
+            <h2>⚠️ Important Notes</h2>
+            <div class="note-box warning">
+                <span class="note-icon">🔒</span>
+                <div class="note-content">
+                    <strong>Security:</strong> Some templates run in privileged mode or expose many ports. Always review the template details before deploying to production.
+                </div>
+            </div>
+            
+            <div class="note-box info" style="margin-top: 12px;">
+                <span class="note-icon">📦</span>
+                <div class="note-content">
+                    <strong>Volumes:</strong> Make sure to configure volume paths according to your system. Default paths may not exist on your host.
+                </div>
+            </div>
         </div>
-    </main>
+
+        <div class="content-card">
+            <h2>🤝 Contributing</h2>
+            <p style="color: var(--gray-600); line-height: 1.7;">
+                Want to add a template or fix an issue? Contributions are welcome! 
+                Check out our <a href="https://github.com/rexdivakar/portainer_templates" target="_blank">GitHub repository</a> 
+                to submit a pull request or report issues.
+            </p>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="footer-inner">
@@ -107,10 +101,11 @@ python -m http.server 8080</pre>
 
     <script>
         function copyUrl() {
-            const url = document.getElementById('template-url').textContent;
+            const url = document.getElementById('template-url').value;
             navigator.clipboard.writeText(url).then(() => {
-                event.target.textContent = '✓ Copied!';
-                setTimeout(() => event.target.textContent = 'Copy URL', 2000);
+                const btn = event.target;
+                btn.textContent = '✓ Copied!';
+                setTimeout(() => btn.textContent = 'Copy URL', 2000);
             });
         }
     </script>
