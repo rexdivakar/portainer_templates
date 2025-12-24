@@ -24,8 +24,15 @@ def main():
     except ValidationError as ve:
         print('Validation error:', ve.message)
         json_obj = ve.instance
-        identifier = json_obj.get('title')
-        print('Title of invalid template:', identifier)
+
+        # Handle different types of validation errors
+        if isinstance(json_obj, dict):
+            identifier = json_obj.get('title', json_obj.get('name', 'Unknown'))
+            print(f'Title of invalid template: {identifier}')
+        else:
+            print(f'Invalid value: {json_obj}')
+            print(f'Path to error: {" -> ".join(str(p) for p in ve.absolute_path)}')
+
         sys.exit(1)
     except FileNotFoundError as fnfe:
         print(f'File not found error: {fnfe}')

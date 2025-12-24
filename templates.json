@@ -1366,7 +1366,7 @@
       "maintainer": " https://github.com/portainer/templates/"
     },
     {
-      "type": 4,
+      "type": 3,
       "title": "Softing EdgeConnector modbus",
       "description": "Connect Modbus TCP Sensors/PLCs and provide the data via OPC UA and MQTT",
       "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/softing-edgeconnector-modbus/docker-compose.yml",
@@ -1374,7 +1374,7 @@
       "categories": []
     },
     {
-      "type": 4,
+      "type": 3,
       "title": "Softing EdgeConnector 840D",
       "description": "Access Siemens SINUMERIK 840D sl/pl controllers and provide data via OPC UA and MQTT",
       "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/softing-edgeconnector-840d/docker-compose.yml",
@@ -1382,7 +1382,7 @@
       "categories": []
     },
     {
-      "type": 4,
+      "type": 3,
       "title": "Softing EdgeConnector Siemens",
       "description": "Connect Siemens SIMATIC S7-300/400/1200/1500 PLCs and provide the data via OPC UA and MQTT",
       "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/softing-edgeconnector-siemens/docker-compose.yml",
@@ -1390,7 +1390,7 @@
       "categories": []
     },
     {
-      "type": 4,
+      "type": 3,
       "title": "Softing EdgeConnector FANUC CNC",
       "description": "Connect FANUC CNCs and provide the data via OPC UA and MQTT",
       "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/softing-edgeconnector-fanuc-cnc/docker-compose.yml",
@@ -1398,7 +1398,7 @@
       "categories": []
     },
     {
-      "type": 4,
+      "type": 3,
       "title": "Softing EdgeConnector Aggregator",
       "description": "Offers a powerful OPC UA aggregation service which provides data via OPC UA, as well as MQTT",
       "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/softing-edgeconnector-aggregator/docker-compose.yml",
