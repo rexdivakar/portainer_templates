@@ -22,8 +22,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 1729775154,
-          "pulls_formatted": "1729.8M",
+          "pulls": 1729906077,
+          "pulls_formatted": "1729.9M",
           "stars": 4172,
           "hub_url": "https://hub.docker.com/_/registry",
           "last_updated": "2025-10-10T21:38:25.027012Z",
@@ -59,8 +59,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 1729775154,
-          "pulls_formatted": "1729.8M",
+          "pulls": 1729906077,
+          "pulls_formatted": "1729.9M",
           "stars": 4172,
           "hub_url": "https://hub.docker.com/_/registry",
           "last_updated": "2025-10-10T21:38:25.027012Z",
@@ -83,9 +83,9 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 9778997725,
-          "pulls_formatted": "9779.0M",
-          "stars": 17769,
+          "pulls": 9779798791,
+          "pulls_formatted": "9779.8M",
+          "stars": 17770,
           "hub_url": "https://hub.docker.com/_/ubuntu",
           "last_updated": "2026-01-16T00:06:15.344698Z",
           "is_official": true
@@ -107,8 +107,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 6133401421,
-          "pulls_formatted": "6133.4M",
+          "pulls": 6135690064,
+          "pulls_formatted": "6135.7M",
           "stars": 14098,
           "hub_url": "https://hub.docker.com/_/node",
           "last_updated": "2026-01-15T01:43:37.858892Z",
@@ -141,9 +141,9 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 12726945575,
-          "pulls_formatted": "12726.9M",
-          "stars": 21147,
+          "pulls": 12729154275,
+          "pulls_formatted": "12729.2M",
+          "stars": 21148,
           "hub_url": "https://hub.docker.com/_/nginx",
           "last_updated": "2026-01-14T18:52:42.591012Z",
           "is_official": true
@@ -171,8 +171,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 4674864433,
-          "pulls_formatted": "4674.9M",
+          "pulls": 4675121673,
+          "pulls_formatted": "4675.1M",
           "stars": 4918,
           "hub_url": "https://hub.docker.com/_/httpd",
           "last_updated": "2026-01-14T09:52:53.990249Z",
@@ -201,11 +201,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 669516972,
-          "pulls_formatted": "669.5M",
+          "pulls": 669658306,
+          "pulls_formatted": "669.7M",
           "stars": 928,
           "hub_url": "https://hub.docker.com/_/caddy",
-          "last_updated": "2026-01-16T01:54:24.072452Z",
+          "last_updated": "2026-01-17T01:53:35.860403Z",
           "is_official": true
         }
       }
@@ -242,7 +242,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 170180628,
+          "pulls": 170234738,
           "pulls_formatted": "170.2M",
           "stars": 1033,
           "hub_url": "https://hub.docker.com/r/mysql/mysql-server",
@@ -278,8 +278,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 3033215170,
-          "pulls_formatted": "3033.2M",
+          "pulls": 3033691487,
+          "pulls_formatted": "3033.7M",
           "stars": 6070,
           "hub_url": "https://hub.docker.com/_/mariadb",
           "last_updated": "2026-01-16T01:39:56.933785Z",
@@ -318,11 +318,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 10152029897,
-          "pulls_formatted": "10152.0M",
+          "pulls": 10155366640,
+          "pulls_formatted": "10155.4M",
           "stars": 14747,
           "hub_url": "https://hub.docker.com/_/postgres",
-          "last_updated": "2026-01-16T06:07:59.690981Z",
+          "last_updated": "2026-01-16T09:07:37.203243Z",
           "is_official": true
         }
       }
@@ -348,8 +348,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 4685367802,
-          "pulls_formatted": "4685.4M",
+          "pulls": 4685933971,
+          "pulls_formatted": "4685.9M",
           "stars": 10691,
           "hub_url": "https://hub.docker.com/_/mongo",
           "last_updated": "2026-01-16T02:09:49.184661Z",
@@ -379,7 +379,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 19341398,
+          "pulls": 19344295,
           "pulls_formatted": "19.3M",
           "stars": 228,
           "hub_url": "https://hub.docker.com/_/crate",
@@ -440,11 +440,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 378411387,
-          "pulls_formatted": "378.4M",
+          "pulls": 378451703,
+          "pulls_formatted": "378.5M",
           "stars": 4416,
           "hub_url": "https://hub.docker.com/r/gitlab/gitlab-ce",
-          "last_updated": "2026-01-16T02:18:08.31143Z",
+          "last_updated": "2026-01-17T02:52:02.527482Z",
           "is_official": false
         }
       }
@@ -518,7 +518,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 6442742,
+          "pulls": 6442804,
           "pulls_formatted": "6.4M",
           "stars": 106,
           "hub_url": "https://hub.docker.com/r/scality/s3server",
@@ -607,11 +607,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 350392086,
+          "pulls": 350408485,
           "pulls_formatted": "350.4M",
           "stars": 1009,
           "hub_url": "https://hub.docker.com/_/solr",
-          "last_updated": "2026-01-16T03:00:27.087384Z",
+          "last_updated": "2026-01-16T08:58:36.104339Z",
           "is_official": true
         }
       }
@@ -637,8 +637,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 10243865105,
-          "pulls_formatted": "10243.9M",
+          "pulls": 10246872605,
+          "pulls_formatted": "10246.9M",
           "stars": 13512,
           "hub_url": "https://hub.docker.com/_/redis",
           "last_updated": "2026-01-14T02:07:00.189579Z",
@@ -716,11 +716,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 3745402724,
-          "pulls_formatted": "3745.4M",
+          "pulls": 3745793210,
+          "pulls_formatted": "3745.8M",
           "stars": 5333,
           "hub_url": "https://hub.docker.com/_/rabbitmq",
-          "last_updated": "2026-01-16T01:56:09.67329Z",
+          "last_updated": "2026-01-17T01:54:03.266624Z",
           "is_official": true
         }
       }
@@ -747,11 +747,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 373163322,
+          "pulls": 373181542,
           "pulls_formatted": "373.2M",
           "stars": 1800,
           "hub_url": "https://hub.docker.com/_/ghost",
-          "last_updated": "2026-01-16T01:47:34.701759Z",
+          "last_updated": "2026-01-16T22:46:13.70556Z",
           "is_official": true
         }
       }
@@ -788,11 +788,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 85229535,
+          "pulls": 85235202,
           "pulls_formatted": "85.2M",
           "stars": 474,
           "hub_url": "https://hub.docker.com/_/joomla",
-          "last_updated": "2026-01-13T17:46:22.048282Z",
+          "last_updated": "2026-01-17T05:46:09.006527Z",
           "is_official": true
         }
       }
@@ -818,11 +818,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 203341330,
-          "pulls_formatted": "203.3M",
+          "pulls": 203364374,
+          "pulls_formatted": "203.4M",
           "stars": 1083,
           "hub_url": "https://hub.docker.com/_/drupal",
-          "last_updated": "2026-01-16T06:09:08.508226Z",
+          "last_updated": "2026-01-17T03:27:54.729481Z",
           "is_official": true
         }
       }
@@ -849,7 +849,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 7281899,
+          "pulls": 7285082,
           "pulls_formatted": "7.3M",
           "stars": 102,
           "hub_url": "https://hub.docker.com/_/plone",
@@ -890,7 +890,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 10892570,
+          "pulls": 10892581,
           "pulls_formatted": "10.9M",
           "stars": 23,
           "hub_url": "https://hub.docker.com/r/sematext/sematext-agent-docker",
@@ -935,11 +935,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 11111463035,
-          "pulls_formatted": "11111.5M",
+          "pulls": 11112881490,
+          "pulls_formatted": "11112.9M",
           "stars": 172,
           "hub_url": "https://hub.docker.com/r/datadog/agent",
-          "last_updated": "2026-01-15T07:23:48.907931Z",
+          "last_updated": "2026-01-16T15:28:35.311544Z",
           "is_official": false
         }
       }
@@ -976,7 +976,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 13623231,
+          "pulls": 13632481,
           "pulls_formatted": "13.6M",
           "stars": 158,
           "hub_url": "https://hub.docker.com/r/mautic/mautic",
@@ -1007,8 +1007,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 4926173260,
-          "pulls_formatted": "4926.2M",
+          "pulls": 4926328973,
+          "pulls_formatted": "4926.3M",
           "stars": 4215,
           "hub_url": "https://hub.docker.com/r/jenkins/jenkins",
           "last_updated": "2026-01-13T07:53:54.348131Z",
@@ -1038,7 +1038,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 72077867,
+          "pulls": 72085057,
           "pulls_formatted": "72.1M",
           "stars": 1256,
           "hub_url": "https://hub.docker.com/_/redmine",
@@ -1074,8 +1074,8 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 133047699,
-          "pulls_formatted": "133.0M",
+          "pulls": 133213170,
+          "pulls_formatted": "133.2M",
           "stars": 604,
           "hub_url": "https://hub.docker.com/r/filebrowser/filebrowser",
           "last_updated": "2026-01-10T09:41:32.095192Z",
@@ -1107,11 +1107,11 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 1912408,
+          "pulls": 1913569,
           "pulls_formatted": "1.9M",
           "stars": 57,
           "hub_url": "https://hub.docker.com/r/ortussolutions/commandbox",
-          "last_updated": "2026-01-15T22:38:06.326366Z",
+          "last_updated": "2026-01-16T18:21:19.684122Z",
           "is_official": false
         }
       }
@@ -1158,7 +1158,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 53973,
+          "pulls": 53985,
           "pulls_formatted": "54.0K",
           "stars": 5,
           "hub_url": "https://hub.docker.com/r/ortussolutions/contentbox",
@@ -1208,7 +1208,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 394080,
+          "pulls": 394111,
           "pulls_formatted": "394.1K",
           "stars": 15,
           "hub_url": "https://hub.docker.com/r/dokku/dokku",
@@ -1268,7 +1268,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 51174,
+          "pulls": 51183,
           "pulls_formatted": "51.2K",
           "stars": 6,
           "hub_url": "https://hub.docker.com/r/opcrouter/runtime",
@@ -1326,7 +1326,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 6521,
+          "pulls": 6522,
           "pulls_formatted": "6.5K",
           "stars": 2,
           "hub_url": "https://hub.docker.com/r/softingindustrial/edgeconnector-modbus",
@@ -1353,7 +1353,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 7910,
+          "pulls": 7912,
           "pulls_formatted": "7.9K",
           "stars": 3,
           "hub_url": "https://hub.docker.com/r/softingindustrial/edgeconnector-840d",
@@ -1380,7 +1380,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 19865,
+          "pulls": 19868,
           "pulls_formatted": "19.9K",
           "stars": 8,
           "hub_url": "https://hub.docker.com/r/softingindustrial/edgeconnector-siemens",
@@ -1421,7 +1421,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 1246,
+          "pulls": 1247,
           "pulls_formatted": "1.2K",
           "stars": 0,
           "hub_url": "https://hub.docker.com/r/softingindustrial/edgeconnector-fanuc-cnc",
@@ -1462,7 +1462,7 @@
       "maintainer": " https://github.com/portainer/templates/",
       "metadata": {
         "docker": {
-          "pulls": 2424,
+          "pulls": 2426,
           "pulls_formatted": "2.4K",
           "stars": 1,
           "hub_url": "https://hub.docker.com/r/softingindustrial/edgeaggregator",
@@ -1855,11 +1855,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 69802068,
+          "pulls": 69825983,
           "pulls_formatted": "69.8M",
           "stars": 202,
           "hub_url": "https://hub.docker.com/r/authelia/authelia",
-          "last_updated": "2026-01-16T01:11:34.811261Z",
+          "last_updated": "2026-01-17T00:57:43.885953Z",
           "is_official": false
         }
       }
@@ -1917,7 +1917,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 20497,
+          "pulls": 20508,
           "pulls_formatted": "20.5K",
           "stars": 6,
           "hub_url": "https://hub.docker.com/r/zusam/zusam",
@@ -1985,11 +1985,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 50327172,
+          "pulls": 50329551,
           "pulls_formatted": "50.3M",
           "stars": 160,
           "hub_url": "https://hub.docker.com/r/linuxserver/beets",
-          "last_updated": "2026-01-15T16:26:42.943855Z",
+          "last_updated": "2026-01-16T19:04:41.055767Z",
           "is_official": false
         },
         "github": {
@@ -1997,7 +1997,7 @@
           "stars": 167,
           "forks": 54,
           "issues": 4,
-          "updated": "2026-01-09T18:54:55Z",
+          "updated": "2026-01-16T18:56:14Z",
           "license": "GPL-3.0"
         }
       }
@@ -2027,8 +2027,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 249183195,
-          "pulls_formatted": "249.2M",
+          "pulls": 249417086,
+          "pulls_formatted": "249.4M",
           "stars": 1397,
           "hub_url": "https://hub.docker.com/r/vaultwarden/server",
           "last_updated": "2026-01-14T12:24:10.796165Z",
@@ -2085,7 +2085,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 50729046,
+          "pulls": 50729175,
           "pulls_formatted": "50.7M",
           "stars": 85,
           "hub_url": "https://hub.docker.com/r/linuxserver/booksonic",
@@ -2181,7 +2181,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 13304364,
+          "pulls": 13306900,
           "pulls_formatted": "13.3M",
           "stars": 142,
           "hub_url": "https://hub.docker.com/r/zadam/trilium",
@@ -2231,7 +2231,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 22623254,
+          "pulls": 22623488,
           "pulls_formatted": "22.6M",
           "stars": 97,
           "hub_url": "https://hub.docker.com/r/linuxserver/cops",
@@ -2288,7 +2288,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 4636506,
+          "pulls": 4636993,
           "pulls_formatted": "4.6M",
           "stars": 58,
           "hub_url": "https://hub.docker.com/r/kizaing/kavita",
@@ -2339,7 +2339,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 199914843,
+          "pulls": 199925127,
           "pulls_formatted": "199.9M",
           "stars": 937,
           "hub_url": "https://hub.docker.com/r/linuxserver/calibre-web",
@@ -2348,10 +2348,10 @@
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-calibre-web",
-          "stars": 1352,
+          "stars": 1354,
           "forks": 167,
           "issues": 0,
-          "updated": "2026-01-14T23:44:09Z",
+          "updated": "2026-01-16T23:59:04Z",
           "license": "GPL-3.0"
         }
       }
@@ -2450,7 +2450,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1222571,
+          "pulls": 1222593,
           "pulls_formatted": "1.2M",
           "stars": 3,
           "hub_url": "https://hub.docker.com/r/gregyankovoy/chowdown",
@@ -2512,19 +2512,19 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 67349614,
-          "pulls_formatted": "67.3M",
-          "stars": 727,
+          "pulls": 67355998,
+          "pulls_formatted": "67.4M",
+          "stars": 728,
           "hub_url": "https://hub.docker.com/r/linuxserver/code-server",
-          "last_updated": "2026-01-12T19:55:08.443277Z",
+          "last_updated": "2026-01-17T05:04:43.304255Z",
           "is_official": false
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-code-server",
-          "stars": 1918,
+          "stars": 1919,
           "forks": 372,
           "issues": 1,
-          "updated": "2026-01-14T22:17:02Z",
+          "updated": "2026-01-17T04:57:12Z",
           "license": "GPL-3.0"
         }
       }
@@ -2565,7 +2565,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 2394438,
+          "pulls": 2394452,
           "pulls_formatted": "2.4M",
           "stars": 25,
           "hub_url": "https://hub.docker.com/r/linuxserver/codiad",
@@ -2627,7 +2627,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 149672931,
+          "pulls": 149673699,
           "pulls_formatted": "149.7M",
           "stars": 391,
           "hub_url": "https://hub.docker.com/r/linuxserver/couchpotato",
@@ -2681,7 +2681,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 7535446,
+          "pulls": 7535741,
           "pulls_formatted": "7.5M",
           "stars": 70,
           "hub_url": "https://hub.docker.com/r/linuxserver/daapd",
@@ -2723,7 +2723,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 11297203,
+          "pulls": 11297366,
           "pulls_formatted": "11.3M",
           "stars": 41,
           "hub_url": "https://hub.docker.com/r/rmountjoy/dashmachine",
@@ -2774,7 +2774,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 4706358,
+          "pulls": 4706379,
           "pulls_formatted": "4.7M",
           "stars": 43,
           "hub_url": "https://hub.docker.com/r/linuxserver/davos",
@@ -2861,7 +2861,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 331592681,
+          "pulls": 331598294,
           "pulls_formatted": "331.6M",
           "stars": 604,
           "hub_url": "https://hub.docker.com/r/linuxserver/deluge",
@@ -2917,7 +2917,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 25636368,
+          "pulls": 25636536,
           "pulls_formatted": "25.6M",
           "stars": 113,
           "hub_url": "https://hub.docker.com/r/linuxserver/domoticz",
@@ -2973,7 +2973,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 211078323,
+          "pulls": 211081719,
           "pulls_formatted": "211.1M",
           "stars": 426,
           "hub_url": "https://hub.docker.com/r/linuxserver/duckdns",
@@ -3038,19 +3038,19 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 179737196,
+          "pulls": 179748132,
           "pulls_formatted": "179.7M",
           "stars": 429,
           "hub_url": "https://hub.docker.com/r/linuxserver/duplicati",
-          "last_updated": "2026-01-10T04:29:56.095222Z",
+          "last_updated": "2026-01-17T04:28:10.006537Z",
           "is_official": false
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-duplicati",
-          "stars": 423,
+          "stars": 424,
           "forks": 42,
           "issues": 2,
-          "updated": "2026-01-14T01:31:33Z",
+          "updated": "2026-01-17T04:20:42Z",
           "license": "GPL-3.0"
         }
       }
@@ -3106,7 +3106,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 44589442,
+          "pulls": 44592820,
           "pulls_formatted": "44.6M",
           "stars": 225,
           "hub_url": "https://hub.docker.com/r/linuxserver/emby",
@@ -3148,7 +3148,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 10503229,
+          "pulls": 10503325,
           "pulls_formatted": "10.5M",
           "stars": 32,
           "hub_url": "https://hub.docker.com/r/linuxserver/embystat",
@@ -3201,7 +3201,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 47876933,
+          "pulls": 47878240,
           "pulls_formatted": "47.9M",
           "stars": 208,
           "hub_url": "https://hub.docker.com/r/linuxserver/freshrss",
@@ -3277,7 +3277,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3099148,
+          "pulls": 3099162,
           "pulls_formatted": "3.1M",
           "stars": 14,
           "hub_url": "https://hub.docker.com/r/linuxserver/gazee",
@@ -3319,7 +3319,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 56783762,
+          "pulls": 56784570,
           "pulls_formatted": "56.8M",
           "stars": 205,
           "hub_url": "https://hub.docker.com/r/oznu/guacamole",
@@ -3369,7 +3369,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 55726105,
+          "pulls": 55727573,
           "pulls_formatted": "55.7M",
           "stars": 185,
           "hub_url": "https://hub.docker.com/r/linuxserver/grocy",
@@ -3378,10 +3378,10 @@
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-grocy",
-          "stars": 412,
+          "stars": 413,
           "forks": 59,
           "issues": 3,
-          "updated": "2026-01-15T20:46:15Z",
+          "updated": "2026-01-16T23:01:21Z",
           "license": "GPL-3.0"
         }
       }
@@ -3423,7 +3423,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 21154612,
+          "pulls": 21154932,
           "pulls_formatted": "21.2M",
           "stars": 89,
           "hub_url": "https://hub.docker.com/r/linuxserver/htpcmanager",
@@ -3484,7 +3484,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 88977223,
+          "pulls": 88977315,
           "pulls_formatted": "89.0M",
           "stars": 224,
           "hub_url": "https://hub.docker.com/r/linuxserver/headphones",
@@ -3540,7 +3540,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 584393633,
+          "pulls": 584407411,
           "pulls_formatted": "584.4M",
           "stars": 1157,
           "hub_url": "https://hub.docker.com/r/linuxserver/heimdall",
@@ -3587,8 +3587,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 41240768,
-          "pulls_formatted": "41.2M",
+          "pulls": 41251730,
+          "pulls_formatted": "41.3M",
           "stars": 200,
           "hub_url": "https://hub.docker.com/r/b4bz/homer",
           "last_updated": "2025-11-16T13:04:48.113097Z",
@@ -3851,7 +3851,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 9731154,
+          "pulls": 9734984,
           "pulls_formatted": "9.7M",
           "stars": 126,
           "hub_url": "https://hub.docker.com/r/pawelmalak/flame",
@@ -3884,7 +3884,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 20326777,
+          "pulls": 20326895,
           "pulls_formatted": "20.3M",
           "stars": 207,
           "hub_url": "https://hub.docker.com/r/huginn/huginn",
@@ -3929,7 +3929,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1877273,
+          "pulls": 1879263,
           "pulls_formatted": "1.9M",
           "stars": 12,
           "hub_url": "https://hub.docker.com/r/bropat/eufy-security-ws",
@@ -4026,11 +4026,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1567478208,
+          "pulls": 1567501419,
           "pulls_formatted": "1567.5M",
           "stars": 1201,
           "hub_url": "https://hub.docker.com/r/linuxserver/jackett",
-          "last_updated": "2026-01-15T07:07:52.841165Z",
+          "last_updated": "2026-01-16T07:06:41.553118Z",
           "is_official": false
         },
         "github": {
@@ -4038,7 +4038,7 @@
           "stars": 462,
           "forks": 119,
           "issues": 0,
-          "updated": "2026-01-15T06:59:45Z",
+          "updated": "2026-01-16T06:58:39Z",
           "license": "GPL-3.0"
         }
       }
@@ -4094,8 +4094,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 147147841,
-          "pulls_formatted": "147.1M",
+          "pulls": 147161911,
+          "pulls_formatted": "147.2M",
           "stars": 793,
           "hub_url": "https://hub.docker.com/r/linuxserver/jellyfin",
           "last_updated": "2026-01-13T13:22:28.384991Z",
@@ -4103,10 +4103,10 @@
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-jellyfin",
-          "stars": 839,
+          "stars": 840,
           "forks": 128,
           "issues": 5,
-          "updated": "2026-01-15T00:34:30Z",
+          "updated": "2026-01-16T21:47:15Z",
           "license": "GPL-3.0"
         }
       }
@@ -4148,7 +4148,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 19590480,
+          "pulls": 19590661,
           "pulls_formatted": "19.6M",
           "stars": 183,
           "hub_url": "https://hub.docker.com/r/linuxserver/kodi-headless",
@@ -4206,11 +4206,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 241848810,
-          "pulls_formatted": "241.8M",
+          "pulls": 241852177,
+          "pulls_formatted": "241.9M",
           "stars": 229,
           "hub_url": "https://hub.docker.com/r/linuxserver/lazylibrarian",
-          "last_updated": "2026-01-14T18:08:01.390316Z",
+          "last_updated": "2026-01-16T18:02:40.958147Z",
           "is_official": false
         },
         "github": {
@@ -4348,11 +4348,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 89732240,
+          "pulls": 89736702,
           "pulls_formatted": "89.7M",
           "stars": 413,
           "hub_url": "https://hub.docker.com/r/linuxserver/swag",
-          "last_updated": "2026-01-13T11:11:45.864602Z",
+          "last_updated": "2026-01-17T04:06:04.538565Z",
           "is_official": false
         },
         "github": {
@@ -4360,7 +4360,7 @@
           "stars": 3566,
           "forks": 280,
           "issues": 8,
-          "updated": "2026-01-15T19:45:29Z",
+          "updated": "2026-01-17T03:59:39Z",
           "license": "GPL-3.0"
         }
       }
@@ -4390,7 +4390,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 22294296,
+          "pulls": 22297122,
           "pulls_formatted": "22.3M",
           "stars": 145,
           "hub_url": "https://hub.docker.com/r/linuxserver/librespeed",
@@ -4494,7 +4494,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 19577994,
+          "pulls": 19578092,
           "pulls_formatted": "19.6M",
           "stars": 156,
           "hub_url": "https://hub.docker.com/r/linuxserver/lychee",
@@ -4547,7 +4547,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3676246,
+          "pulls": 3676284,
           "pulls_formatted": "3.7M",
           "stars": 33,
           "hub_url": "https://hub.docker.com/r/linuxserver/mcmyadmin2",
@@ -4609,7 +4609,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 74480569,
+          "pulls": 74481876,
           "pulls_formatted": "74.5M",
           "stars": 124,
           "hub_url": "https://hub.docker.com/r/linuxserver/medusa",
@@ -4661,7 +4661,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 56096181,
+          "pulls": 56096326,
           "pulls_formatted": "56.1M",
           "stars": 50,
           "hub_url": "https://hub.docker.com/r/linuxserver/minetest",
@@ -4714,7 +4714,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 2462009,
+          "pulls": 2462512,
           "pulls_formatted": "2.5M",
           "stars": 38,
           "hub_url": "https://hub.docker.com/r/jokobsk/pi.alert",
@@ -4756,7 +4756,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1471542,
+          "pulls": 1471564,
           "pulls_formatted": "1.5M",
           "stars": 13,
           "hub_url": "https://hub.docker.com/r/linuxserver/minisatip",
@@ -4801,7 +4801,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 5157301,
+          "pulls": 5157377,
           "pulls_formatted": "5.2M",
           "stars": 54,
           "hub_url": "https://hub.docker.com/r/linuxserver/mstream",
@@ -4872,7 +4872,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 2696399,
+          "pulls": 2696425,
           "pulls_formatted": "2.7M",
           "stars": 18,
           "hub_url": "https://hub.docker.com/r/goofball222/murmur",
@@ -4927,7 +4927,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 11765728,
+          "pulls": 11765794,
           "pulls_formatted": "11.8M",
           "stars": 74,
           "hub_url": "https://hub.docker.com/r/linuxserver/musicbrainz",
@@ -4981,7 +4981,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 104762708,
+          "pulls": 104763357,
           "pulls_formatted": "104.8M",
           "stars": 167,
           "hub_url": "https://hub.docker.com/r/linuxserver/muximux",
@@ -5043,7 +5043,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 90038736,
+          "pulls": 90038802,
           "pulls_formatted": "90.0M",
           "stars": 122,
           "hub_url": "https://hub.docker.com/r/linuxserver/mylar",
@@ -5100,7 +5100,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 807101714,
+          "pulls": 807109563,
           "pulls_formatted": "807.1M",
           "stars": 478,
           "hub_url": "https://hub.docker.com/r/linuxserver/nzbget",
@@ -5158,11 +5158,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 167175915,
+          "pulls": 167179037,
           "pulls_formatted": "167.2M",
           "stars": 107,
           "hub_url": "https://hub.docker.com/r/linuxserver/nzbhydra2",
-          "last_updated": "2026-01-14T21:12:19.882382Z",
+          "last_updated": "2026-01-16T17:04:14.243368Z",
           "is_official": false
         },
         "github": {
@@ -5247,8 +5247,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 224435759,
-          "pulls_formatted": "224.4M",
+          "pulls": 224594973,
+          "pulls_formatted": "224.6M",
           "stars": 1222,
           "hub_url": "https://hub.docker.com/r/jc21/nginx-proxy-manager",
           "last_updated": "2026-01-14T04:54:24.565136Z",
@@ -5293,19 +5293,19 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 18526451,
+          "pulls": 18527378,
           "pulls_formatted": "18.5M",
           "stars": 51,
           "hub_url": "https://hub.docker.com/r/linuxserver/oscam",
-          "last_updated": "2026-01-15T13:14:07.577807Z",
+          "last_updated": "2026-01-17T02:29:17.078584Z",
           "is_official": false
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-oscam",
           "stars": 51,
           "forks": 31,
-          "issues": 1,
-          "updated": "2026-01-11T09:10:28Z",
+          "issues": 0,
+          "updated": "2026-01-16T11:32:48Z",
           "license": "GPL-3.0"
         }
       }
@@ -5549,7 +5549,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 8425686,
+          "pulls": 8425736,
           "pulls_formatted": "8.4M",
           "stars": 74,
           "hub_url": "https://hub.docker.com/r/linuxserver/photoshow",
@@ -5600,11 +5600,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 935219739,
-          "pulls_formatted": "935.2M",
+          "pulls": 935575315,
+          "pulls_formatted": "935.6M",
           "stars": 2889,
           "hub_url": "https://hub.docker.com/r/pihole/pihole",
-          "last_updated": "2026-01-16T05:05:27.083863Z",
+          "last_updated": "2026-01-17T05:03:19.427126Z",
           "is_official": false
         }
       }
@@ -5645,9 +5645,9 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 36817539,
+          "pulls": 36818839,
           "pulls_formatted": "36.8M",
-          "stars": 230,
+          "stars": 229,
           "hub_url": "https://hub.docker.com/r/linuxserver/piwigo",
           "last_updated": "2026-01-03T15:39:20.447684Z",
           "is_official": false
@@ -5711,8 +5711,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 871473694,
-          "pulls_formatted": "871.5M",
+          "pulls": 871648581,
+          "pulls_formatted": "871.6M",
           "stars": 2114,
           "hub_url": "https://hub.docker.com/r/linuxserver/plex",
           "last_updated": "2025-12-22T09:41:35.237717Z",
@@ -5822,7 +5822,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 4736210,
+          "pulls": 4736398,
           "pulls_formatted": "4.7M",
           "stars": 83,
           "hub_url": "https://hub.docker.com/r/linuxserver/projectsend",
@@ -5867,7 +5867,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1320252,
+          "pulls": 1321953,
           "pulls_formatted": "1.3M",
           "stars": 22,
           "hub_url": "https://hub.docker.com/r/shenxn/protonmail-bridge",
@@ -5952,7 +5952,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 7866590,
+          "pulls": 7866633,
           "pulls_formatted": "7.9M",
           "stars": 84,
           "hub_url": "https://hub.docker.com/r/linuxserver/pydio",
@@ -6011,8 +6011,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 331109777,
-          "pulls_formatted": "331.1M",
+          "pulls": 331167309,
+          "pulls_formatted": "331.2M",
           "stars": 1631,
           "hub_url": "https://hub.docker.com/r/linuxserver/qbittorrent",
           "last_updated": "2026-01-11T07:09:19.159985Z",
@@ -6020,10 +6020,10 @@
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-qbittorrent",
-          "stars": 1498,
-          "forks": 195,
+          "stars": 1500,
+          "forks": 196,
           "issues": 8,
-          "updated": "2026-01-15T06:46:49Z",
+          "updated": "2026-01-17T05:29:04Z",
           "license": "GPL-3.0"
         }
       }
@@ -6064,7 +6064,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 6714231,
+          "pulls": 6714319,
           "pulls_formatted": "6.7M",
           "stars": 38,
           "hub_url": "https://hub.docker.com/r/linuxserver/quassel-core",
@@ -6165,7 +6165,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 4200265,
+          "pulls": 4203298,
           "pulls_formatted": "4.2M",
           "stars": 60,
           "hub_url": "https://hub.docker.com/r/amruthpillai/reactive-resume",
@@ -6216,7 +6216,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 64586579,
+          "pulls": 64588097,
           "pulls_formatted": "64.6M",
           "stars": 251,
           "hub_url": "https://hub.docker.com/r/linuxserver/resilio-sync",
@@ -6275,7 +6275,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 154109345,
+          "pulls": 154110151,
           "pulls_formatted": "154.1M",
           "stars": 185,
           "hub_url": "https://hub.docker.com/r/linuxserver/rutorrent",
@@ -6337,11 +6337,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 712367896,
+          "pulls": 712389466,
           "pulls_formatted": "712.4M",
           "stars": 663,
           "hub_url": "https://hub.docker.com/r/linuxserver/sabnzbd",
-          "last_updated": "2026-01-15T21:22:03.221846Z",
+          "last_updated": "2026-01-16T22:40:01.36479Z",
           "is_official": false
         },
         "github": {
@@ -6399,7 +6399,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 46475947,
+          "pulls": 46484669,
           "pulls_formatted": "46.5M",
           "stars": 60,
           "hub_url": "https://hub.docker.com/r/linuxserver/sickchill",
@@ -6461,7 +6461,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1330119,
+          "pulls": 1330180,
           "pulls_formatted": "1.3M",
           "stars": 44,
           "hub_url": "https://hub.docker.com/r/linuxserver/sickgear",
@@ -6519,7 +6519,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 88032419,
+          "pulls": 88034087,
           "pulls_formatted": "88.0M",
           "stars": 256,
           "hub_url": "https://hub.docker.com/r/linuxserver/smokeping",
@@ -6528,10 +6528,10 @@
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-smokeping",
-          "stars": 416,
+          "stars": 418,
           "forks": 100,
           "issues": 3,
-          "updated": "2026-01-13T09:00:07Z",
+          "updated": "2026-01-16T23:56:02Z",
           "license": "GPL-3.0"
         }
       }
@@ -6641,19 +6641,19 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 985498856,
+          "pulls": 985514755,
           "pulls_formatted": "985.5M",
           "stars": 430,
           "hub_url": "https://hub.docker.com/r/linuxserver/tautulli",
-          "last_updated": "2026-01-15T23:43:14.3659Z",
+          "last_updated": "2026-01-16T17:18:29.198924Z",
           "is_official": false
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-tautulli",
           "stars": 232,
           "forks": 34,
-          "issues": 1,
-          "updated": "2026-01-12T19:09:50Z",
+          "issues": 0,
+          "updated": "2026-01-16T17:11:25Z",
           "license": "GPL-3.0"
         }
       }
@@ -6694,7 +6694,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 12228011,
+          "pulls": 12228132,
           "pulls_formatted": "12.2M",
           "stars": 62,
           "hub_url": "https://hub.docker.com/r/linuxserver/thelounge",
@@ -6736,7 +6736,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3413334,
+          "pulls": 3413347,
           "pulls_formatted": "3.4M",
           "stars": 28,
           "hub_url": "https://hub.docker.com/r/mazzolino/tiddlywiki",
@@ -6781,7 +6781,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1294159,
+          "pulls": 1294160,
           "pulls_formatted": "1.3M",
           "stars": 8,
           "hub_url": "https://hub.docker.com/r/lunik1/tt-rss",
@@ -6834,9 +6834,9 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 532172525,
+          "pulls": 532187364,
           "pulls_formatted": "532.2M",
-          "stars": 1425,
+          "stars": 1426,
           "hub_url": "https://hub.docker.com/r/linuxserver/transmission",
           "last_updated": "2026-01-10T01:49:45.605209Z",
           "is_official": false
@@ -6914,7 +6914,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 391663823,
+          "pulls": 391677016,
           "pulls_formatted": "391.7M",
           "stars": 659,
           "hub_url": "https://hub.docker.com/r/haugene/transmission-openvpn",
@@ -6964,7 +6964,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 85581688,
+          "pulls": 85585441,
           "pulls_formatted": "85.6M",
           "stars": 331,
           "hub_url": "https://hub.docker.com/r/linuxserver/tvheadend",
@@ -7029,7 +7029,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 135386336,
+          "pulls": 135386976,
           "pulls_formatted": "135.4M",
           "stars": 283,
           "hub_url": "https://hub.docker.com/r/linuxserver/ubooquity",
@@ -7090,7 +7090,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 341172374,
+          "pulls": 341174686,
           "pulls_formatted": "341.2M",
           "stars": 797,
           "hub_url": "https://hub.docker.com/r/linuxserver/unifi-controller",
@@ -7130,8 +7130,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 8225636976,
-          "pulls_formatted": "8225.6M",
+          "pulls": 8225731193,
+          "pulls_formatted": "8225.7M",
           "stars": 1233,
           "hub_url": "https://hub.docker.com/r/containrrr/watchtower",
           "last_updated": "2024-01-03T11:29:04.187936Z",
@@ -7177,7 +7177,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 12015794,
+          "pulls": 12016192,
           "pulls_formatted": "12.0M",
           "stars": 38,
           "hub_url": "https://hub.docker.com/r/linuxserver/webgrabplus",
@@ -7218,8 +7218,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 19449501,
-          "pulls_formatted": "19.4M",
+          "pulls": 19453664,
+          "pulls_formatted": "19.5M",
           "stars": 45,
           "hub_url": "https://hub.docker.com/r/benbusby/whoogle-search",
           "last_updated": "2025-12-29T16:08:34.249072Z",
@@ -7256,7 +7256,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 6916320,
+          "pulls": 6916979,
           "pulls_formatted": "6.9M",
           "stars": 98,
           "hub_url": "https://hub.docker.com/r/linuxserver/wikijs",
@@ -7301,7 +7301,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 21150268,
+          "pulls": 21152769,
           "pulls_formatted": "21.2M",
           "stars": 75,
           "hub_url": "https://hub.docker.com/r/selfhostedpro/yacht",
@@ -7351,11 +7351,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 276893174,
-          "pulls_formatted": "276.9M",
+          "pulls": 277090995,
+          "pulls_formatted": "277.1M",
           "stars": 136,
           "hub_url": "https://hub.docker.com/r/amir20/dozzle",
-          "last_updated": "2026-01-15T22:19:43.537987Z",
+          "last_updated": "2026-01-17T04:02:19.799707Z",
           "is_official": false
         }
       }
@@ -7442,11 +7442,11 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 48626990,
+          "pulls": 48648363,
           "pulls_formatted": "48.6M",
           "stars": 214,
           "hub_url": "https://hub.docker.com/r/netboxcommunity/netbox",
-          "last_updated": "2026-01-16T05:54:41.054255Z",
+          "last_updated": "2026-01-17T05:48:53.597295Z",
           "is_official": false
         }
       }
@@ -7569,7 +7569,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 198253,
+          "pulls": 198332,
           "pulls_formatted": "198.3K",
           "stars": 17,
           "hub_url": "https://hub.docker.com/r/xtrendence/cryptofolio",
@@ -7616,7 +7616,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 9663364,
+          "pulls": 9669816,
           "pulls_formatted": "9.7M",
           "stars": 95,
           "hub_url": "https://hub.docker.com/r/dgtlmoon/changedetection.io",
@@ -7653,7 +7653,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 5737,
+          "pulls": 5744,
           "pulls_formatted": "5.7K",
           "stars": 5,
           "hub_url": "https://hub.docker.com/r/cloudogu/reveal.js",
@@ -7686,7 +7686,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 51422575,
+          "pulls": 51422705,
           "pulls_formatted": "51.4M",
           "stars": 29,
           "hub_url": "https://hub.docker.com/r/statping/statping",
@@ -7719,8 +7719,8 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 521220,
-          "pulls_formatted": "521.2K",
+          "pulls": 521452,
+          "pulls_formatted": "521.5K",
           "stars": 14,
           "hub_url": "https://hub.docker.com/r/upshift/nut-upsd",
           "last_updated": "2022-04-27T18:37:14.609363Z",
@@ -7800,7 +7800,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3801250,
+          "pulls": 3808875,
           "pulls_formatted": "3.8M",
           "stars": 225,
           "hub_url": "https://hub.docker.com/r/linuxserver/webtop",
@@ -7809,10 +7809,10 @@
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-webtop",
-          "stars": 3823,
+          "stars": 3828,
           "forks": 318,
           "issues": 9,
-          "updated": "2026-01-16T02:15:16Z",
+          "updated": "2026-01-17T00:05:25Z",
           "license": "GPL-3.0"
         }
       }
@@ -9924,7 +9924,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 27869358,
+          "pulls": 27874563,
           "pulls_formatted": "27.9M",
           "stars": 120,
           "hub_url": "https://hub.docker.com/r/tzahi12345/youtubedl-material",
@@ -9969,7 +9969,7 @@
       "maintainer": " https://github.com/xneo1/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 10899388,
+          "pulls": 10899487,
           "pulls_formatted": "10.9M",
           "stars": 45,
           "hub_url": "https://hub.docker.com/r/linuxserver/znc",
@@ -10153,8 +10153,8 @@
       "maintainer": " https://github.com/shmolf/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 8225636976,
-          "pulls_formatted": "8225.6M",
+          "pulls": 8225731193,
+          "pulls_formatted": "8225.7M",
           "stars": 1233,
           "hub_url": "https://hub.docker.com/r/containrrr/watchtower",
           "last_updated": "2024-01-03T11:29:04.187936Z",
@@ -10220,11 +10220,11 @@
       "maintainer": " https://github.com/shmolf/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 16639821,
-          "pulls_formatted": "16.6M",
+          "pulls": 16662740,
+          "pulls_formatted": "16.7M",
           "stars": 234,
           "hub_url": "https://hub.docker.com/r/frooodle/s-pdf",
-          "last_updated": "2026-01-15T21:27:07.760365Z",
+          "last_updated": "2026-01-17T00:48:51.396657Z",
           "is_official": false
         }
       }
@@ -10271,8 +10271,8 @@
       "maintainer": " https://github.com/shmolf/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 25741,
-          "pulls_formatted": "25.7K",
+          "pulls": 25924,
+          "pulls_formatted": "25.9K",
           "stars": 2,
           "hub_url": "https://hub.docker.com/r/passivelemon/terraria-docker",
           "last_updated": "2026-01-07T03:22:43.052467Z",
@@ -10299,7 +10299,7 @@
       "maintainer": " https://github.com/shmolf/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 1830307,
+          "pulls": 1830325,
           "pulls_formatted": "1.8M",
           "stars": 27,
           "hub_url": "https://hub.docker.com/r/agentejo/cockpit",
@@ -10435,19 +10435,19 @@
       "maintainer": " https://github.com/shmolf/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 67349619,
-          "pulls_formatted": "67.3M",
-          "stars": 727,
+          "pulls": 67355998,
+          "pulls_formatted": "67.4M",
+          "stars": 728,
           "hub_url": "https://hub.docker.com/r/linuxserver/code-server",
-          "last_updated": "2026-01-12T19:55:08.443277Z",
+          "last_updated": "2026-01-17T05:04:43.304255Z",
           "is_official": false
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-code-server",
-          "stars": 1918,
+          "stars": 1919,
           "forks": 372,
           "issues": 1,
-          "updated": "2026-01-14T22:17:02Z",
+          "updated": "2026-01-17T04:57:12Z",
           "license": "GPL-3.0"
         }
       }
@@ -10740,7 +10740,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 2728266,
+          "pulls": 2728294,
           "pulls_formatted": "2.7M",
           "stars": 34,
           "hub_url": "https://hub.docker.com/r/linuxserver/pwndrop",
@@ -10882,7 +10882,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 50211385,
+          "pulls": 50215206,
           "pulls_formatted": "50.2M",
           "stars": 354,
           "hub_url": "https://hub.docker.com/r/linuxserver/calibre",
@@ -10893,7 +10893,7 @@
           "url": "https://github.com/linuxserver/docker-calibre",
           "stars": 507,
           "forks": 71,
-          "issues": 1,
+          "issues": 2,
           "updated": "2026-01-14T06:58:04Z",
           "license": "GPL-3.0"
         }
@@ -10951,11 +10951,11 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3937690,
+          "pulls": 3938176,
           "pulls_formatted": "3.9M",
           "stars": 66,
           "hub_url": "https://hub.docker.com/r/linuxserver/habridge",
-          "last_updated": "2025-12-19T22:32:39.188017Z",
+          "last_updated": "2026-01-16T22:34:40.897717Z",
           "is_official": false
         },
         "github": {
@@ -10963,7 +10963,7 @@
           "stars": 19,
           "forks": 8,
           "issues": 0,
-          "updated": "2025-12-19T22:27:13Z",
+          "updated": "2026-01-16T22:28:58Z",
           "license": "GPL-3.0"
         }
       }
@@ -11010,7 +11010,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1709018,
+          "pulls": 1710336,
           "pulls_formatted": "1.7M",
           "stars": 44,
           "hub_url": "https://hub.docker.com/r/karsten13/magicmirror",
@@ -11063,7 +11063,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 38499412,
+          "pulls": 38517518,
           "pulls_formatted": "38.5M",
           "stars": 187,
           "hub_url": "https://hub.docker.com/r/gotson/komga",
@@ -11147,8 +11147,8 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 20827067,
-          "pulls_formatted": "20.8M",
+          "pulls": 20861210,
+          "pulls_formatted": "20.9M",
           "stars": 98,
           "hub_url": "https://hub.docker.com/r/linuxserver/snipe-it",
           "last_updated": "2025-04-25T13:39:59.845044Z",
@@ -11210,7 +11210,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 4773333,
+          "pulls": 4773501,
           "pulls_formatted": "4.8M",
           "stars": 72,
           "hub_url": "https://hub.docker.com/r/linuxserver/foldingathome",
@@ -11272,7 +11272,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 41515,
+          "pulls": 41532,
           "pulls_formatted": "41.5K",
           "stars": 16,
           "hub_url": "https://hub.docker.com/r/linuxserver/audacity",
@@ -11352,7 +11352,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3316176,
+          "pulls": 3316272,
           "pulls_formatted": "3.3M",
           "stars": 35,
           "hub_url": "https://hub.docker.com/r/linuxserver/booksonic-air",
@@ -11440,7 +11440,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 7863742,
+          "pulls": 7864068,
           "pulls_formatted": "7.9M",
           "stars": 65,
           "hub_url": "https://hub.docker.com/r/linuxserver/cloud9",
@@ -11503,7 +11503,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 23824242,
+          "pulls": 23825207,
           "pulls_formatted": "23.8M",
           "stars": 141,
           "hub_url": "https://hub.docker.com/r/linuxserver/dokuwiki",
@@ -11577,8 +11577,8 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 809358,
-          "pulls_formatted": "809.4K",
+          "pulls": 810292,
+          "pulls_formatted": "810.3K",
           "stars": 86,
           "hub_url": "https://hub.docker.com/r/linuxserver/emulatorjs",
           "last_updated": "2025-06-09T23:32:42.073414Z",
@@ -11669,7 +11669,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 654469,
+          "pulls": 654546,
           "pulls_formatted": "654.5K",
           "stars": 34,
           "hub_url": "https://hub.docker.com/r/linuxserver/endlessh",
@@ -11731,7 +11731,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 4473107,
+          "pulls": 4476004,
           "pulls_formatted": "4.5M",
           "stars": 172,
           "hub_url": "https://hub.docker.com/r/linuxserver/ffmpeg",
@@ -11793,8 +11793,8 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 544124,
-          "pulls_formatted": "544.1K",
+          "pulls": 544327,
+          "pulls_formatted": "544.3K",
           "stars": 57,
           "hub_url": "https://hub.docker.com/r/linuxserver/filezilla",
           "last_updated": "2026-01-12T19:42:18.712287Z",
@@ -11939,7 +11939,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 18349113,
+          "pulls": 18349682,
           "pulls_formatted": "18.3M",
           "stars": 130,
           "hub_url": "https://hub.docker.com/r/linuxserver/healthchecks",
@@ -12002,11 +12002,11 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3801895,
+          "pulls": 3805091,
           "pulls_formatted": "3.8M",
           "stars": 258,
           "hub_url": "https://hub.docker.com/r/linuxserver/homeassistant",
-          "last_updated": "2026-01-14T02:52:50.219043Z",
+          "last_updated": "2026-01-16T22:26:28.146513Z",
           "is_official": false
         },
         "github": {
@@ -12014,7 +12014,7 @@
           "stars": 262,
           "forks": 31,
           "issues": 0,
-          "updated": "2026-01-14T02:35:40Z",
+          "updated": "2026-01-16T22:10:34Z",
           "license": "GPL-3.0"
         }
       }
@@ -12076,7 +12076,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1821419,
+          "pulls": 1821426,
           "pulls_formatted": "1.8M",
           "stars": 11,
           "hub_url": "https://hub.docker.com/r/linuxserver/kanzi",
@@ -12139,7 +12139,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 8788710,
+          "pulls": 8788753,
           "pulls_formatted": "8.8M",
           "stars": 88,
           "hub_url": "https://hub.docker.com/r/linuxserver/ldap-auth",
@@ -12201,8 +12201,8 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 897777,
-          "pulls_formatted": "897.8K",
+          "pulls": 898234,
+          "pulls_formatted": "898.2K",
           "stars": 65,
           "hub_url": "https://hub.docker.com/r/linuxserver/libreoffice",
           "last_updated": "2026-01-12T23:13:46.483986Z",
@@ -12210,10 +12210,10 @@
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-libreoffice",
-          "stars": 128,
+          "stars": 129,
           "forks": 17,
           "issues": 0,
-          "updated": "2026-01-12T22:57:22Z",
+          "updated": "2026-01-16T12:17:21Z",
           "license": "GPL-3.0"
         }
       }
@@ -12263,11 +12263,11 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 242798,
-          "pulls_formatted": "242.8K",
+          "pulls": 243704,
+          "pulls_formatted": "243.7K",
           "stars": 10,
           "hub_url": "https://hub.docker.com/r/linuxserver/limnoria",
-          "last_updated": "2026-01-02T19:04:44.526549Z",
+          "last_updated": "2026-01-16T20:38:31.977224Z",
           "is_official": false
         },
         "github": {
@@ -12275,7 +12275,7 @@
           "stars": 9,
           "forks": 0,
           "issues": 0,
-          "updated": "2026-01-02T18:57:46Z",
+          "updated": "2026-01-16T20:32:47Z",
           "license": "GPL-3.0"
         }
       }
@@ -12369,7 +12369,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3242152,
+          "pulls": 3242170,
           "pulls_formatted": "3.2M",
           "stars": 54,
           "hub_url": "https://hub.docker.com/r/linuxserver/nano",
@@ -12405,7 +12405,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 253471,
+          "pulls": 253494,
           "pulls_formatted": "253.5K",
           "stars": 7,
           "hub_url": "https://hub.docker.com/r/linuxserver/nano-wallet",
@@ -12521,7 +12521,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 26415781,
+          "pulls": 26427920,
           "pulls_formatted": "26.4M",
           "stars": 143,
           "hub_url": "https://hub.docker.com/r/linuxserver/openssh-server",
@@ -12593,8 +12593,8 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 690043,
-          "pulls_formatted": "690.0K",
+          "pulls": 690115,
+          "pulls_formatted": "690.1K",
           "stars": 35,
           "hub_url": "https://hub.docker.com/r/linuxserver/paperless-ng",
           "last_updated": "2022-08-10T08:46:23.535428Z",
@@ -12665,7 +12665,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3549037,
+          "pulls": 3549111,
           "pulls_formatted": "3.5M",
           "stars": 75,
           "hub_url": "https://hub.docker.com/r/linuxserver/papermerge",
@@ -12727,7 +12727,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 50076,
+          "pulls": 50084,
           "pulls_formatted": "50.1K",
           "stars": 8,
           "hub_url": "https://hub.docker.com/r/linuxserver/pidgin",
@@ -12794,7 +12794,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 7103803,
+          "pulls": 7104092,
           "pulls_formatted": "7.1M",
           "stars": 138,
           "hub_url": "https://hub.docker.com/r/linuxserver/rdesktop",
@@ -12803,10 +12803,10 @@
         },
         "github": {
           "url": "https://github.com/linuxserver/docker-rdesktop",
-          "stars": 311,
+          "stars": 310,
           "forks": 47,
           "issues": 0,
-          "updated": "2026-01-14T22:18:10Z",
+          "updated": "2026-01-16T18:18:47Z",
           "license": "GPL-3.0"
         }
       }
@@ -12864,8 +12864,8 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 210399,
-          "pulls_formatted": "210.4K",
+          "pulls": 210478,
+          "pulls_formatted": "210.5K",
           "stars": 41,
           "hub_url": "https://hub.docker.com/r/linuxserver/rsnapshot",
           "last_updated": "2025-12-18T05:00:34.867482Z",
@@ -12927,7 +12927,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 3676174,
+          "pulls": 3677207,
           "pulls_formatted": "3.7M",
           "stars": 84,
           "hub_url": "https://hub.docker.com/r/linuxserver/snapdrop",
@@ -13029,7 +13029,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 61530859,
+          "pulls": 61537576,
           "pulls_formatted": "61.5M",
           "stars": 876,
           "hub_url": "https://hub.docker.com/r/linuxserver/wireguard",
@@ -13092,7 +13092,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1688849,
+          "pulls": 1688966,
           "pulls_formatted": "1.7M",
           "stars": 145,
           "hub_url": "https://hub.docker.com/r/linuxserver/wireshark",
@@ -13182,7 +13182,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 394673,
+          "pulls": 394719,
           "pulls_formatted": "394.7K",
           "stars": 35,
           "hub_url": "https://hub.docker.com/r/linuxserver/airsonic-advanced",
@@ -13256,7 +13256,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1355351,
+          "pulls": 1356059,
           "pulls_formatted": "1.4M",
           "stars": 26,
           "hub_url": "https://hub.docker.com/r/linuxserver/phpmyadmin",
@@ -13334,7 +13334,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 19987,
+          "pulls": 19992,
           "pulls_formatted": "20.0K",
           "stars": 7,
           "hub_url": "https://hub.docker.com/r/linuxserver/pixapop",
@@ -13402,7 +13402,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1173204,
+          "pulls": 1173829,
           "pulls_formatted": "1.2M",
           "stars": 50,
           "hub_url": "https://hub.docker.com/r/linuxserver/syslog-ng",
@@ -13454,7 +13454,7 @@
       "maintainer": " https://github.com/mycroftwilde/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 45536,
+          "pulls": 45538,
           "pulls_formatted": "45.5K",
           "stars": 19,
           "hub_url": "https://hub.docker.com/r/sameersbn/wowza",
@@ -13516,8 +13516,8 @@
       "maintainer": " https://github.com/mikestraney/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 156998873,
-          "pulls_formatted": "157.0M",
+          "pulls": 157093199,
+          "pulls_formatted": "157.1M",
           "stars": 1371,
           "hub_url": "https://hub.docker.com/r/adguard/adguardhome",
           "last_updated": "2026-01-08T10:46:33.796Z",
@@ -13551,7 +13551,7 @@
       "maintainer": " https://github.com/mikestraney/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 327909945,
+          "pulls": 327910299,
           "pulls_formatted": "327.9M",
           "stars": 414,
           "hub_url": "https://hub.docker.com/r/bitwardenrs/server",
@@ -13582,7 +13582,7 @@
       "maintainer": " https://github.com/mikestraney/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 2507991,
+          "pulls": 2508018,
           "pulls_formatted": "2.5M",
           "stars": 13,
           "hub_url": "https://hub.docker.com/r/iron/functions",
@@ -13619,7 +13619,7 @@
       "maintainer": " https://github.com/mikestraney/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 932790,
+          "pulls": 932810,
           "pulls_formatted": "932.8K",
           "stars": 5,
           "hub_url": "https://hub.docker.com/r/iron/functions-ui",
@@ -13651,7 +13651,7 @@
       "maintainer": " https://github.com/mikestraney/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 717477,
+          "pulls": 717480,
           "pulls_formatted": "717.5K",
           "stars": 11,
           "hub_url": "https://hub.docker.com/r/alankent/gsd",
@@ -13727,9 +13727,9 @@
       "maintainer": " https://github.com/mikestraney/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 47493104,
+          "pulls": 47510350,
           "pulls_formatted": "47.5M",
-          "stars": 1489,
+          "stars": 1490,
           "hub_url": "https://hub.docker.com/_/odoo",
           "last_updated": "2026-01-16T02:14:59.746414Z",
           "is_official": true
@@ -13758,8 +13758,8 @@
       "maintainer": " https://github.com/mikestraney/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 810712,
-          "pulls_formatted": "810.7K",
+          "pulls": 810793,
+          "pulls_formatted": "810.8K",
           "stars": 92,
           "hub_url": "https://hub.docker.com/r/plesk/plesk",
           "last_updated": "2026-01-06T10:25:14.88483Z",
@@ -13792,7 +13792,7 @@
       "maintainer": " https://github.com/mikestraney/portainer-templates/",
       "metadata": {
         "docker": {
-          "pulls": 590318,
+          "pulls": 590335,
           "pulls_formatted": "590.3K",
           "stars": 4,
           "hub_url": "https://hub.docker.com/r/cfstras/urbackup",
@@ -13855,7 +13855,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 19199311,
+          "pulls": 19199349,
           "pulls_formatted": "19.2M",
           "stars": 30,
           "hub_url": "https://hub.docker.com/r/linuxserver/cardigann",
@@ -13935,11 +13935,11 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 87253878,
+          "pulls": 87257845,
           "pulls_formatted": "87.3M",
           "stars": 78,
           "hub_url": "https://hub.docker.com/r/coderaiser/cloudcmd",
-          "last_updated": "2026-01-15T20:18:31.427904Z",
+          "last_updated": "2026-01-16T22:02:45.687049Z",
           "is_official": false
         }
       }
@@ -14007,7 +14007,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 3671,
+          "pulls": 3675,
           "pulls_formatted": "3.7K",
           "stars": 0,
           "hub_url": "https://hub.docker.com/r/mediadepot/duplicacy",
@@ -14117,7 +14117,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 14381197,
+          "pulls": 14381359,
           "pulls_formatted": "14.4M",
           "stars": 30,
           "hub_url": "https://hub.docker.com/r/silverwind/droppy",
@@ -14126,10 +14126,10 @@
         },
         "github": {
           "url": "https://github.com/silverwind/droppy",
-          "stars": 1633,
+          "stars": 1632,
           "forks": 191,
           "issues": 90,
-          "updated": "2026-01-10T14:32:08Z",
+          "updated": "2026-01-17T05:50:09Z",
           "license": "BSD-2-Clause"
         }
       }
@@ -14196,7 +14196,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 10611126,
+          "pulls": 10612202,
           "pulls_formatted": "10.6M",
           "stars": 23,
           "hub_url": "https://hub.docker.com/r/housewrecker/gaps",
@@ -14283,7 +14283,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 11973779,
+          "pulls": 11973796,
           "pulls_formatted": "12.0M",
           "stars": 1,
           "hub_url": "https://hub.docker.com/r/logzio/docker-collector-logs",
@@ -14342,7 +14342,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 694195,
+          "pulls": 694199,
           "pulls_formatted": "694.2K",
           "stars": 0,
           "hub_url": "https://hub.docker.com/r/logzio/docker-collector-metrics",
@@ -14440,8 +14440,8 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 871473706,
-          "pulls_formatted": "871.5M",
+          "pulls": 871648581,
+          "pulls_formatted": "871.6M",
           "stars": 2114,
           "hub_url": "https://hub.docker.com/r/linuxserver/plex",
           "last_updated": "2025-12-22T09:41:35.237717Z",
@@ -14589,7 +14589,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 39181327,
+          "pulls": 39184689,
           "pulls_formatted": "39.2M",
           "stars": 259,
           "hub_url": "https://hub.docker.com/r/stilliard/pure-ftpd",
@@ -14660,7 +14660,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 5782360,
+          "pulls": 5783792,
           "pulls_formatted": "5.8M",
           "stars": 18,
           "hub_url": "https://hub.docker.com/r/jlesage/qdirstat",
@@ -14696,7 +14696,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 1483,
+          "pulls": 1489,
           "pulls_formatted": "1.5K",
           "stars": 0,
           "hub_url": "https://hub.docker.com/r/mediadepot/rclone",
@@ -14822,7 +14822,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 41303185,
+          "pulls": 41303257,
           "pulls_formatted": "41.3M",
           "stars": 144,
           "hub_url": "https://hub.docker.com/r/linuxserver/sickrage",
@@ -14911,7 +14911,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 11488571,
+          "pulls": 11488730,
           "pulls_formatted": "11.5M",
           "stars": 32,
           "hub_url": "https://hub.docker.com/r/mozilla/syncserver",
@@ -15058,7 +15058,7 @@
       "maintainer": " https://github.com/mediadepot/templates/",
       "metadata": {
         "docker": {
-          "pulls": 4717483,
+          "pulls": 4719722,
           "pulls_formatted": "4.7M",
           "stars": 66,
           "hub_url": "https://hub.docker.com/r/delfer/alpine-ftp-server",
@@ -15164,11 +15164,11 @@
       "maintainer": " https://github.com/Qballjos/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 7870600,
+          "pulls": 7871880,
           "pulls_formatted": "7.9M",
           "stars": 107,
           "hub_url": "https://hub.docker.com/r/justarchi/archisteamfarm",
-          "last_updated": "2026-01-16T04:50:11.777243Z",
+          "last_updated": "2026-01-17T02:01:30.785273Z",
           "is_official": false
         }
       }
@@ -15220,11 +15220,11 @@
       "maintainer": " https://github.com/Qballjos/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 365587209,
+          "pulls": 365636062,
           "pulls_formatted": "365.6M",
           "stars": 1030,
           "hub_url": "https://hub.docker.com/r/gitea/gitea",
-          "last_updated": "2026-01-16T00:44:20.677985Z",
+          "last_updated": "2026-01-16T21:48:25.245484Z",
           "is_official": false
         }
       }
@@ -15266,7 +15266,7 @@
       "maintainer": " https://github.com/Qballjos/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 27181366,
+          "pulls": 27243078,
           "pulls_formatted": "27.2M",
           "stars": 140,
           "hub_url": "https://hub.docker.com/r/fallenbagel/jellyseerr",
@@ -15294,8 +15294,8 @@
       "maintainer": " https://github.com/Qballjos/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 46927,
-          "pulls_formatted": "46.9K",
+          "pulls": 46986,
+          "pulls_formatted": "47.0K",
           "stars": 1,
           "hub_url": "https://hub.docker.com/r/rabbitcompany/passky-client",
           "last_updated": "2025-10-10T13:41:49.481539Z",
@@ -15340,8 +15340,8 @@
       "maintainer": " https://github.com/Qballjos/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 40403,
-          "pulls_formatted": "40.4K",
+          "pulls": 40463,
+          "pulls_formatted": "40.5K",
           "stars": 2,
           "hub_url": "https://hub.docker.com/r/rabbitcompany/passky-server",
           "last_updated": "2024-11-05T18:48:21.438374Z",
@@ -15387,7 +15387,7 @@
       "maintainer": " https://github.com/Qballjos/portainer_templates/",
       "metadata": {
         "docker": {
-          "pulls": 1094762,
+          "pulls": 1097434,
           "pulls_formatted": "1.1M",
           "stars": 30,
           "hub_url": "https://hub.docker.com/r/rdavidoff/twitch-channel-points-miner-v2",
@@ -15423,7 +15423,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 17769,
+          "pulls": 17818,
           "pulls_formatted": "17.8K",
           "stars": 4,
           "hub_url": "https://hub.docker.com/r/novaspirit/alpine_xfce4_novnc",
@@ -15471,8 +15471,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 4674865162,
-          "pulls_formatted": "4674.9M",
+          "pulls": 4675122509,
+          "pulls_formatted": "4675.1M",
           "stars": 4918,
           "hub_url": "https://hub.docker.com/_/httpd",
           "last_updated": "2026-01-14T09:52:53.990249Z",
@@ -15533,7 +15533,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 8983081,
+          "pulls": 8989573,
           "pulls_formatted": "9.0M",
           "stars": 96,
           "hub_url": "https://hub.docker.com/r/archivebox/archivebox",
@@ -15588,8 +15588,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 673557,
-          "pulls_formatted": "673.6K",
+          "pulls": 674288,
+          "pulls_formatted": "674.3K",
           "stars": 43,
           "hub_url": "https://hub.docker.com/r/hurlenko/aria2-ariang",
           "last_updated": "2025-12-15T00:52:06.546676Z",
@@ -15630,7 +15630,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 12267471,
+          "pulls": 12269467,
           "pulls_formatted": "12.3M",
           "stars": 93,
           "hub_url": "https://hub.docker.com/r/cturra/ntp",
@@ -15677,7 +15677,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 192259166,
+          "pulls": 192262571,
           "pulls_formatted": "192.3M",
           "stars": 42,
           "hub_url": "https://hub.docker.com/r/mkodockx/docker-clamav",
@@ -15720,8 +15720,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 6441245,
-          "pulls_formatted": "6.4M",
+          "pulls": 6453966,
+          "pulls_formatted": "6.5M",
           "stars": 35,
           "hub_url": "https://hub.docker.com/r/favonia/cloudflare-ddns",
           "last_updated": "2025-09-11T08:30:58.825904Z",
@@ -15786,11 +15786,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 10152037870,
-          "pulls_formatted": "10152.0M",
+          "pulls": 10155373389,
+          "pulls_formatted": "10155.4M",
           "stars": 14747,
           "hub_url": "https://hub.docker.com/_/postgres",
-          "last_updated": "2026-01-16T06:07:59.690981Z",
+          "last_updated": "2026-01-16T09:07:37.203243Z",
           "is_official": true
         }
       }
@@ -15830,9 +15830,9 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 652372417,
-          "pulls_formatted": "652.4M",
-          "stars": 1367,
+          "pulls": 652456290,
+          "pulls_formatted": "652.5M",
+          "stars": 1368,
           "hub_url": "https://hub.docker.com/_/eclipse-mosquitto",
           "last_updated": "2025-11-14T19:05:50.766437Z",
           "is_official": true
@@ -15873,8 +15873,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 133047897,
-          "pulls_formatted": "133.0M",
+          "pulls": 133213419,
+          "pulls_formatted": "133.2M",
           "stars": 604,
           "hub_url": "https://hub.docker.com/r/filebrowser/filebrowser",
           "last_updated": "2026-01-10T09:41:32.095192Z",
@@ -15928,8 +15928,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 133047897,
-          "pulls_formatted": "133.0M",
+          "pulls": 133213419,
+          "pulls_formatted": "133.2M",
           "stars": 604,
           "hub_url": "https://hub.docker.com/r/filebrowser/filebrowser",
           "last_updated": "2026-01-10T09:41:32.095192Z",
@@ -15974,7 +15974,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 9731155,
+          "pulls": 9734986,
           "pulls_formatted": "9.7M",
           "stars": 126,
           "hub_url": "https://hub.docker.com/r/pawelmalak/flame",
@@ -16072,7 +16072,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 29258565,
+          "pulls": 29262788,
           "pulls_formatted": "29.3M",
           "stars": 88,
           "hub_url": "https://hub.docker.com/r/felddy/foundryvtt",
@@ -16100,7 +16100,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 18861016,
+          "pulls": 18864931,
           "pulls_formatted": "18.9M",
           "stars": 125,
           "hub_url": "https://hub.docker.com/r/serjs/go-socks5-proxy",
@@ -16152,7 +16152,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 1540093,
+          "pulls": 1540139,
           "pulls_formatted": "1.5M",
           "stars": 3,
           "hub_url": "https://hub.docker.com/r/gotify/server-arm7",
@@ -16254,8 +16254,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 8933602,
-          "pulls_formatted": "8.9M",
+          "pulls": 8951162,
+          "pulls_formatted": "9.0M",
           "stars": 98,
           "hub_url": "https://hub.docker.com/r/homebridge/homebridge",
           "last_updated": "2026-01-14T10:55:37.945251Z",
@@ -16294,8 +16294,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 1088407398,
-          "pulls_formatted": "1088.4M",
+          "pulls": 1088466466,
+          "pulls_formatted": "1088.5M",
           "stars": 1987,
           "hub_url": "https://hub.docker.com/_/influxdb",
           "last_updated": "2026-01-16T00:23:22.408012Z",
@@ -16340,11 +16340,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 31088931,
+          "pulls": 31092619,
           "pulls_formatted": "31.1M",
           "stars": 168,
           "hub_url": "https://hub.docker.com/r/buanet/iobroker",
-          "last_updated": "2026-01-14T19:56:47.149995Z",
+          "last_updated": "2026-01-17T00:06:32.116374Z",
           "is_official": false
         }
       }
@@ -16396,7 +16396,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 52391328,
+          "pulls": 52392326,
           "pulls_formatted": "52.4M",
           "stars": 134,
           "hub_url": "https://hub.docker.com/r/jaymoulin/jdownloader",
@@ -16443,7 +16443,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 1242519,
+          "pulls": 1243390,
           "pulls_formatted": "1.2M",
           "stars": 21,
           "hub_url": "https://hub.docker.com/r/hrfee/jfa-go",
@@ -16505,7 +16505,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 1498557,
+          "pulls": 1498624,
           "pulls_formatted": "1.5M",
           "stars": 7,
           "hub_url": "https://hub.docker.com/r/libreddit/libreddit",
@@ -16558,7 +16558,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 1044879,
+          "pulls": 1046240,
           "pulls_formatted": "1.0M",
           "stars": 10,
           "hub_url": "https://hub.docker.com/r/nitnelave/lldap",
@@ -16567,10 +16567,10 @@
         },
         "github": {
           "url": "https://github.com/lldap/lldap",
-          "stars": 5929,
+          "stars": 5930,
           "forks": 310,
           "issues": 97,
-          "updated": "2026-01-15T20:27:39Z",
+          "updated": "2026-01-17T03:55:43Z",
           "license": "GPL-3.0"
         }
       }
@@ -16612,8 +16612,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 990739,
-          "pulls_formatted": "990.7K",
+          "pulls": 991436,
+          "pulls_formatted": "991.4K",
           "stars": 11,
           "hub_url": "https://hub.docker.com/r/krateng/maloja",
           "last_updated": "2025-02-10T03:39:26.396107Z",
@@ -16704,11 +16704,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 14929255,
+          "pulls": 14933012,
           "pulls_formatted": "14.9M",
           "stars": 130,
           "hub_url": "https://hub.docker.com/r/hkotel/mealie",
-          "last_updated": "2026-01-14T23:47:43.872943Z",
+          "last_updated": "2026-01-16T23:24:49.766204Z",
           "is_official": false
         }
       }
@@ -16750,8 +16750,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 24806887,
-          "pulls_formatted": "24.8M",
+          "pulls": 24863100,
+          "pulls_formatted": "24.9M",
           "stars": 150,
           "hub_url": "https://hub.docker.com/r/alexta69/metube",
           "last_updated": "2026-01-11T18:43:34.218551Z",
@@ -16793,11 +16793,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 413804765,
-          "pulls_formatted": "413.8M",
-          "stars": 2141,
+          "pulls": 413871684,
+          "pulls_formatted": "413.9M",
+          "stars": 2143,
           "hub_url": "https://hub.docker.com/r/itzg/minecraft-server",
-          "last_updated": "2026-01-13T03:02:23.123479Z",
+          "last_updated": "2026-01-16T14:15:24.317731Z",
           "is_official": false
         }
       }
@@ -16864,11 +16864,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 505000738,
-          "pulls_formatted": "505.0M",
+          "pulls": 505069698,
+          "pulls_formatted": "505.1M",
           "stars": 562,
           "hub_url": "https://hub.docker.com/r/netdata/netdata",
-          "last_updated": "2026-01-16T01:03:32.848215Z",
+          "last_updated": "2026-01-17T01:01:58.811717Z",
           "is_official": false
         }
       }
@@ -16988,8 +16988,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 224435903,
-          "pulls_formatted": "224.4M",
+          "pulls": 224595069,
+          "pulls_formatted": "224.6M",
           "stars": 1222,
           "hub_url": "https://hub.docker.com/r/jc21/nginx-proxy-manager",
           "last_updated": "2026-01-14T04:54:24.565136Z",
@@ -17042,8 +17042,8 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 224435903,
-          "pulls_formatted": "224.4M",
+          "pulls": 224595069,
+          "pulls_formatted": "224.6M",
           "stars": 1222,
           "hub_url": "https://hub.docker.com/r/jc21/nginx-proxy-manager",
           "last_updated": "2026-01-14T04:54:24.565136Z",
@@ -17138,7 +17138,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 3227988,
+          "pulls": 3228198,
           "pulls_formatted": "3.2M",
           "stars": 27,
           "hub_url": "https://hub.docker.com/r/azinchen/nordvpn",
@@ -17204,7 +17204,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 1570546,
+          "pulls": 1572544,
           "pulls_formatted": "1.6M",
           "stars": 43,
           "hub_url": "https://hub.docker.com/r/instantlinux/nut-upsd",
@@ -17256,7 +17256,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 14576500,
+          "pulls": 14578659,
           "pulls_formatted": "14.6M",
           "stars": 223,
           "hub_url": "https://hub.docker.com/r/octoprint/octoprint",
@@ -17310,11 +17310,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 19651686,
+          "pulls": 19663965,
           "pulls_formatted": "19.7M",
           "stars": 269,
           "hub_url": "https://hub.docker.com/r/mbentley/omada-controller",
-          "last_updated": "2026-01-14T13:37:15.96198Z",
+          "last_updated": "2026-01-16T08:11:58.872768Z",
           "is_official": false
         }
       }
@@ -17357,7 +17357,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 75395745,
+          "pulls": 75399399,
           "pulls_formatted": "75.4M",
           "stars": 200,
           "hub_url": "https://hub.docker.com/r/organizr/organizr",
@@ -17606,11 +17606,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 418950169,
+          "pulls": 419028570,
           "pulls_formatted": "419.0M",
-          "stars": 1488,
+          "stars": 1489,
           "hub_url": "https://hub.docker.com/r/dpage/pgadmin4",
-          "last_updated": "2026-01-16T01:43:47.308458Z",
+          "last_updated": "2026-01-17T01:45:01.466625Z",
           "is_official": false
         }
       }
@@ -17649,7 +17649,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 195011,
+          "pulls": 195017,
           "pulls_formatted": "195.0K",
           "stars": 0,
           "hub_url": "https://hub.docker.com/r/oijkn/pihole-doh-dot",
@@ -17731,7 +17731,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 2355312,
+          "pulls": 2355495,
           "pulls_formatted": "2.4M",
           "stars": 66,
           "hub_url": "https://hub.docker.com/r/cbcrowe/pihole-unbound",
@@ -17839,11 +17839,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 32096128,
+          "pulls": 32102168,
           "pulls_formatted": "32.1M",
           "stars": 96,
           "hub_url": "https://hub.docker.com/r/privatebin/nginx-fpm-alpine",
-          "last_updated": "2026-01-16T01:05:34.086036Z",
+          "last_updated": "2026-01-17T01:02:56.752424Z",
           "is_official": false
         }
       }
@@ -17999,7 +17999,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 91737602,
+          "pulls": 91743679,
           "pulls_formatted": "91.7M",
           "stars": 674,
           "hub_url": "https://hub.docker.com/r/dperson/samba",
@@ -18046,11 +18046,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 34604037,
-          "pulls_formatted": "34.6M",
+          "pulls": 34701028,
+          "pulls_formatted": "34.7M",
           "stars": 159,
           "hub_url": "https://hub.docker.com/r/searxng/searxng",
-          "last_updated": "2026-01-11T15:27:39.199937Z",
+          "last_updated": "2026-01-16T18:49:53.277401Z",
           "is_official": false
         }
       }
@@ -18075,11 +18075,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 2841924,
+          "pulls": 2844273,
           "pulls_formatted": "2.8M",
           "stars": 46,
           "hub_url": "https://hub.docker.com/r/niruix/sshwifty",
-          "last_updated": "2025-12-03T05:15:59.356439Z",
+          "last_updated": "2026-01-16T06:58:09.13059Z",
           "is_official": false
         }
       }
@@ -18123,11 +18123,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 1682797,
+          "pulls": 1684810,
           "pulls_formatted": "1.7M",
           "stars": 70,
           "hub_url": "https://hub.docker.com/r/surrealdb/surrealdb",
-          "last_updated": "2026-01-12T00:57:44.545206Z",
+          "last_updated": "2026-01-17T01:25:12.215139Z",
           "is_official": false
         }
       }
@@ -18173,7 +18173,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 7963,
+          "pulls": 7966,
           "pulls_formatted": "8.0K",
           "stars": 1,
           "hub_url": "https://hub.docker.com/r/mklements/oled_stats",
@@ -18223,9 +18223,9 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 3447895192,
-          "pulls_formatted": "3447.9M",
-          "stars": 3582,
+          "pulls": 3448152367,
+          "pulls_formatted": "3448.2M",
+          "stars": 3581,
           "hub_url": "https://hub.docker.com/_/traefik",
           "last_updated": "2026-01-14T20:48:55.485422Z",
           "is_official": true
@@ -18312,7 +18312,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 391663830,
+          "pulls": 391677030,
           "pulls_formatted": "391.7M",
           "stars": 659,
           "hub_url": "https://hub.docker.com/r/haugene/transmission-openvpn",
@@ -18401,7 +18401,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 391663830,
+          "pulls": 391677030,
           "pulls_formatted": "391.7M",
           "stars": 659,
           "hub_url": "https://hub.docker.com/r/haugene/transmission-openvpn",
@@ -18469,7 +18469,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 18594985,
+          "pulls": 18595095,
           "pulls_formatted": "18.6M",
           "stars": 145,
           "hub_url": "https://hub.docker.com/r/pducharme/unifi-video-controller",
@@ -18523,11 +18523,11 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 14708767,
+          "pulls": 14712244,
           "pulls_formatted": "14.7M",
           "stars": 54,
           "hub_url": "https://hub.docker.com/r/josh5/unmanic",
-          "last_updated": "2026-01-12T08:34:20.558844Z",
+          "last_updated": "2026-01-17T03:55:48.482425Z",
           "is_official": false
         }
       }
@@ -18552,7 +18552,7 @@
       "maintainer": " https://github.com/novaspirit/pi-hosted/",
       "metadata": {
         "docker": {
-          "pulls": 18962723,
+          "pulls": 18963953,
           "pulls_formatted": "19.0M",
           "stars": 284,
           "hub_url": "https://hub.docker.com/r/mikolatero/vlmcsd",
@@ -18694,7 +18694,7 @@
       "maintainer": " https://github.com/SelfhostedPro/selfhosted_templates/",
       "metadata": {
         "docker": {
-          "pulls": 409474683,
+          "pulls": 409485021,
           "pulls_formatted": "409.5M",
           "stars": 605,
           "hub_url": "https://hub.docker.com/r/linuxserver/letsencrypt",
@@ -18811,7 +18811,7 @@
       "maintainer": " https://github.com/SelfhostedPro/selfhosted_templates/",
       "metadata": {
         "docker": {
-          "pulls": 2346701,
+          "pulls": 2346719,
           "pulls_formatted": "2.3M",
           "stars": 16,
           "hub_url": "https://hub.docker.com/r/sgtsquiggs/deluge-openvpn",
@@ -18838,7 +18838,7 @@
       "maintainer": " https://github.com/SelfhostedPro/selfhosted_templates/",
       "metadata": {
         "docker": {
-          "pulls": 111632,
+          "pulls": 111634,
           "pulls_formatted": "111.6K",
           "stars": 2,
           "hub_url": "https://hub.docker.com/r/raesene/dradis",
@@ -18903,7 +18903,7 @@
       "categories": [],
       "metadata": {
         "docker": {
-          "pulls": 14480070,
+          "pulls": 14480375,
           "pulls_formatted": "14.5M",
           "stars": 21,
           "hub_url": "https://hub.docker.com/r/linuxserver/libresonic",
@@ -18959,7 +18959,7 @@
       "categories": [],
       "metadata": {
         "docker": {
-          "pulls": 6714231,
+          "pulls": 6714319,
           "pulls_formatted": "6.7M",
           "stars": 38,
           "hub_url": "https://hub.docker.com/r/linuxserver/quassel-core",
@@ -19075,7 +19075,7 @@
       "categories": [],
       "metadata": {
         "docker": {
-          "pulls": 359204514,
+          "pulls": 359204724,
           "pulls_formatted": "359.2M",
           "stars": 124,
           "hub_url": "https://hub.docker.com/r/linuxserver/hydra2",
@@ -19093,5 +19093,5 @@
       }
     }
   ],
-  "enriched_at": "2026-01-16T06:29:31.967183+00:00"
+  "enriched_at": "2026-01-17T06:26:53.432907+00:00"
 }
